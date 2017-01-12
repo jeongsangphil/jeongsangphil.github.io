@@ -57,7 +57,7 @@
         
           <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Zoeken"></a>
       </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://jeongsangphil.github.io"></form>
@@ -99,7 +99,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://jeongsangphil.github.io/2017/01/04/how-to-use-blog/" data-id="cixiknmub0000dom0c0evn4v3" class="article-share-link">Share</a>
+      <a data-url="http://jeongsangphil.github.io/2017/01/04/how-to-use-blog/" data-id="cixiknmub0000dom0c0evn4v3" class="article-share-link">Delen</a>
       
       
     </footer>
@@ -131,11 +131,25 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <h1 id="javascript"><a href="#javascript" class="headerlink" title="javascript"></a>javascript</h1><h3 id="출력"><a href="#출력" class="headerlink" title="출력"></a>출력</h3><p>console.log(출력할내용);<br>글자 갯수<br><code>&quot;글자&quot;.length</code><br>popup창 확인/취소 -&gt; output (true/false)<br><code>confirm(&quot;글자&quot;);</code><br>popup창 뜨고 입력(input), 입력한대로 출력<br><code>prompt(&quot;글자&quot;);</code><br>변수선언<br><code>var 변수명; // var는 모든자료형</code>  </p>
+<p>함수선언 (class)  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">var 함수명 = function(함수인자)&#123;</div><div class="line">    함수내용</div><div class="line">    ex) console.log();</div><div class="line">&#125;</div><div class="line">function 함수명 (함수인자)&#123;</div><div class="line">    선언 ;</div><div class="line">&#125;</div><div class="line">클래스(class)</div><div class="line">function 함수명 (함수인자)&#123;</div><div class="line">    this.변수명 = 변수값;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>배열<br><code>var names = [a, b, c];</code><br>배열출력<br><code>names : 전부출력 / names[0], names[1] 원하는거 출력</code><br>배열끝에 새로운문자 넣기<br><code>배열명.push(넣을문자나 값);</code><br>object에 배열 추가<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">var family = new Array(); // constructor</div><div class="line">family[0] = new Object(&quot;name&quot;,40); // 배열값 추가</div></pre></td></tr></table></figure></p>
+<p>Math함수 (정수화 등)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">Math.floor</div><div class="line">ex) Math.floor(Math.random()*2);</div><div class="line">Math.Pi -&gt; 3.14xxxxx</div></pre></td></tr></table></figure></p>
+<p>함수에들어온인자 문자/숫자 판별<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ex) if(isNan(number))&#123;&#125;</div></pre></td></tr></table></figure></p>
+<p>대소문자 상관없이 모두 대문자로 해석<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ex) var user prompt(&quot;??&quot;).toUpperCase(); // 입력받은거 대문자로</div></pre></td></tr></table></figure></p>
+<p>Object(객체) 선언방법<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">1. var my = &#123;</div><div class="line">    name: &apos;Eric&apos;, </div><div class="line">    age: 26</div><div class="line">&#125;;</div><div class="line">2. constructor방법</div><div class="line">var my = new Object(); or var my = &#123;&#125;;</div><div class="line">my[&apos;name&apos;] = &quot;n1&quot;; // braket notation </div><div class="line">my.name = &quot;n2&quot;; // dot notation</div><div class="line">+ 함수에서 object선언도 가능</div><div class="line">object.함수명 = function()&#123;&#125;</div><div class="line">```  </div><div class="line"></div><div class="line">for/in 루프  </div><div class="line">`for(var i in object)&#123;&#125;`</div><div class="line">사각형의길이(sidelength)</div><div class="line">`변수명.sidelength`</div><div class="line">Literally Object</div></pre></td></tr></table></figure></p>
+<p>var Object명 = {<br>    someMethod: function(parameter, p2){ // object내 함수?</p>
+<pre><code>}
+</code></pre><p>}<br>object명.someMethod(“”);<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">bracket Object  </div><div class="line">` some obj = &#123;prop: some&#125;;`</div><div class="line">ID (typeof) : object/number/string 구별</div></pre></td></tr></table></figure></p>
+<p>var anumber = 3;<br>console.log(typeof anumber);<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">hasOwnProperty : property 있는지 확인 (true/false)</div><div class="line">`m.hasOwnProperty(&apos;name&apos;); // name이라는 속성있나?`</div><div class="line">prototype : 클래스마다 이름붙이기??  </div><div class="line">프로토타입 상속(prototypal inheritance) 이라는 확장과 객체의 재사용을 가능하게 해주며 class 기반으로 인스턴스를 생성하지 않는 자바스크립트에서 객체지향적인 개발 개념을 가질수 있게 해주는 Prototype에 대한 내용이다.</div></pre></td></tr></table></figure></p>
+<p>ex) function cat(){}<br>cat.prototype 새로운 변수명 = 변수값;<br><code>``  
+상속 (inheritance)</code>penquin.prototype = new Animal(); //펭귄 클래스가 Animal을 상속받음 `</p>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://jeongsangphil.github.io/2017/01/04/javascript/" data-id="cixiknmuj0002dom0h4tpmxii" class="article-share-link">Share</a>
+      <a data-url="http://jeongsangphil.github.io/2017/01/04/javascript/" data-id="cixiknmuj0002dom0h4tpmxii" class="article-share-link">Delen</a>
       
       
     </footer>
@@ -167,7 +181,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>HTML 코드(태그)<br>HTML은 기본적으로 <html>으로 시작, </html>으로 끝난다.</p>
+        <p>HTML 코드(태그)<br>HTML은 기본적으로 <code>&lt;HTML&gt;</code>으로 시작, <code>&lt;/HTML&gt;</code>으로 끝난다.</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">HTML</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">HEAD</span>&gt;</span> </div><div class="line">        <span class="comment">&lt;!--- 주석,  </span></div><div class="line">            &lt;HEAD&gt;&lt;/HEAD&gt;내에 들어올 수 있는 코드는 &lt;link type="text/css" rel="stylesheet" href="stylesheet.css"&gt;이다.</div><div class="line">            stylesheet.css 파일을 통해 css파일 내에서 html 꾸미기 가능. &lt;style&gt;이라고 생각하면됨</div><div class="line">            ex)font-size, font-family, color, background-color 등</div><div class="line">        ---&gt;</div><div class="line">        <span class="tag">&lt;<span class="name">title</span>&gt;</span>html제목<span class="tag">&lt;/<span class="name">title</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">HEAD</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">BODY</span>&gt;</span></div><div class="line">    출력할 것 적는곳</div><div class="line">    <span class="tag">&lt;/<span class="name">BODY</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">HTML</span>&gt;</span></div></pre></td></tr></table></figure>
 <p><code>&lt;BODY&gt;&lt;/BODY&gt;</code>내에 들어갈 HTML 코드 /<em> body도 스타일 설정 가능 ex) <code>&lt;body style=&quot;background-color: white&quot;&gt;&lt;/body&gt;</code> html 전체에 해당</em>/<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span> /*paragraph, 보통 안에 문자를 넣어서 사용한다.*/</div><div class="line">ex) <span class="tag">&lt;<span class="name">p</span> <span class="attr">style</span>=<span class="string">"font-size: 40px"</span>&gt;</span>글자<span class="tag">&lt;/<span class="name">p</span>&gt;</span> /*'글자'문자의 폰트 크기를 40으로 설정*/</div><div class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span><span class="tag">&lt;/<span class="name">h1</span>&gt;</span> ~ <span class="tag">&lt;<span class="name">h6</span>&gt;</span><span class="tag">&lt;/<span class="name">h6</span>&gt;</span> /*heading(헤더), 제목부분 꼭 제목만 들어간다는 것은 아니다.*/</div><div class="line">ex) <span class="tag">&lt;<span class="name">h1</span> <span class="attr">style</span>=<span class="string">"color: green; font-size: 10px"</span>&gt;</span>글자<span class="tag">&lt;/<span class="name">h1</span>&gt;</span> /*'글자'문자의 폰트크기 10, 글자색상 녹색으로 설정, 여러개 동시선언시 ;로 구분*/</div><div class="line">style="text-align: left/right/center" /*text 정렬*/</div><div class="line"><span class="tag">&lt;<span class="name">strong</span>&gt;</span>글자<span class="tag">&lt;/<span class="name">strong</span>&gt;</span> /*text BOLD(굵게)*/</div><div class="line">ex) <span class="tag">&lt;<span class="name">p</span>&gt;</span><span class="tag">&lt;<span class="name">strong</span>&gt;</span>abc<span class="tag">&lt;/<span class="name">strong</span>&gt;</span>de<span class="tag">&lt;/<span class="name">p</span>&gt;</span> /*abc만 굵게*/</div><div class="line"><span class="tag">&lt;<span class="name">em</span>&gt;</span>글자<span class="tag">&lt;/<span class="name">em</span>&gt;</span> /*italicize(이탤릭)글씨체, 강조*/</div><div class="line">ex) <span class="tag">&lt;<span class="name">h1</span>&gt;</span><span class="tag">&lt;<span class="name">em</span>&gt;</span>ab<span class="tag">&lt;/<span class="name">em</span>&gt;</span>cd<span class="tag">&lt;/<span class="name">h1</span>&gt;</span> /*ab만 italicize체(강조)*/</div><div class="line"><span class="tag">&lt;<span class="name">br</span>&gt;</span> /*한줄 띄기*/</div><div class="line"><span class="tag">&lt;<span class="name">hr</span>&gt;</span> /*한 줄에 줄하나 긋기*/</div><div class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"주소"</span>&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span> /*링크 만들기, 클릭하면 href내의 주소로 이동*/</div><div class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"이미지 링크 주소"</span>/&gt;</span> /*html에 이미지 넣기, 파일명도 가능?*/</div><div class="line"><span class="tag">&lt;<span class="name">ol</span>&gt;</span><span class="tag">&lt;/<span class="name">ol</span>&gt;</span> /*ordered List, 순서대로(번호대로) List*/</div><div class="line"><span class="tag">&lt;<span class="name">ul</span>&gt;</span><span class="tag">&lt;/<span class="name">ul</span>&gt;</span> /*unordered List 번호없이 List*/</div><div class="line"><span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span> /*ordered list나 unordered list내에 적는 문장으로 한줄에 해당*/</div><div class="line"><span class="tag">&lt;<span class="name">table</span>&gt;</span><span class="tag">&lt;/<span class="name">table</span>&gt;</span> /*여러 자료 정렬해서 출력하는데 사용, 행,열 이용*/</div><div class="line"><span class="tag">&lt;<span class="name">tr</span>&gt;</span><span class="tag">&lt;/<span class="name">tr</span>&gt;</span> /*table내에 선언, 한 행*/</div><div class="line"><span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span> /*table내에 선언, 한 열*/</div><div class="line"><span class="tag">&lt;<span class="name">thead</span>&gt;</span><span class="tag">&lt;/<span class="name">thead</span>&gt;</span> /*html의 head처럼 table내의 head*/ </div><div class="line"><span class="tag">&lt;<span class="name">th</span>&gt;</span><span class="tag">&lt;/<span class="name">th</span>&gt;</span> /*table내의 head 줄임말로 option으로 colspan="2"처럼 줄 수 있음, 2열을 묶어 한 열로 만듬*/</div><div class="line"><span class="tag">&lt;<span class="name">tbody</span>&gt;</span><span class="tag">&lt;/<span class="name">tbody</span>&gt;</span> /*html의 body처럼 table내의 body*/</div><div class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span> /*레이아웃*/</div><div class="line"><span class="tag">&lt;<span class="name">span</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span> /*css처럼 style지정 가능*/</div><div class="line">ex) <span class="tag">&lt;<span class="name">p</span>&gt;</span><span class="tag">&lt;<span class="name">span</span> <span class="attr">style</span>=<span class="string">"color: red"</span>&gt;</span>hello<span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span> /*css처럼 콜론을 이용, font-size/font-family 등*/</div></pre></td></tr></table></figure></p>
 <p>CSS코드(태그)<br>css란? Cascading Style Sheets (CSS)는 documents가 사용자에게 어떻게 보여질가를 기술하는 언어이다.</p>
@@ -180,7 +194,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://jeongsangphil.github.io/2017/01/03/html_css/" data-id="cixiknmug0001dom0le0hnvxm" class="article-share-link">Share</a>
+      <a data-url="http://jeongsangphil.github.io/2017/01/03/html_css/" data-id="cixiknmug0001dom0le0hnvxm" class="article-share-link">Delen</a>
       
       
     </footer>
@@ -205,7 +219,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
+    <h3 class="widget-title">Archieven</h3>
     <div class="widget">
       <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">January 2017</a></li></ul>
     </div>
@@ -215,7 +229,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
+    <h3 class="widget-title">Recente berichten</h3>
     <div class="widget">
       <ul>
         
