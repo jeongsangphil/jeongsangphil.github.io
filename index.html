@@ -99,7 +99,9 @@
 <h3 id="resource"><a href="#resource" class="headerlink" title="resource"></a>resource</h3><p>drawable : 바꿀수있는 그림<br>layout : 각 보여지는 페이지(layout) 설정, 새로추가 : layout resource file<br>종류 : FrameLayout(한페이지만), linearLayout(선으로 나눠짐), gravityLayout(정렬), TableLayout(순서상관x html table)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;TextView</div><div class="line">android:id = &quot;@+id/아이디적기&quot;//id설정</div><div class="line">android:gravity = &quot;정렬방법&quot;</div><div class="line">android:minHeight = &quot;?android:attr/listPreferredItemHeight&quot; // 최소 높이</div><div class="line">android:text = &quot;보여질 텍스트&quot; /&gt;</div></pre></td></tr></table></figure></p>
 <p>menu : 메뉴버튼누르거나 … 누르면 나오는 메뉴의 속성 (settings)<br>mipmap : 바꾸지 않고 기본으로 하나만 사용하는 그림 넣는곳<br>values : 값 변경  </p>
 <h3 id="단축키"><a href="#단축키" class="headerlink" title="단축키"></a>단축키</h3><p>ctrl + q : 라이브러리, 사용법, 무슨값을넣어야하는지 보기<br>alt + enter : 오류 해결(넣어야할거 자동 추가)<br>ctrl + space : 넣을수있는경로나 값 추천<br>ctrl + alt + l : 자동정렬 (모두선택후)  </p>
-<p>숙제의 사진추가 : 자바소스로 보여지도록.  </p>
+<h3 id="log"><a href="#log" class="headerlink" title="log"></a>log</h3><p>log의 종류 : error/warn/debug/verbose<br><code>log.e(String tag, String msg); // tag는 activity/class 이름, msg는 표시할 메세지</code><br>log 갯수는 한정, 적당히 표시해야함</p>
+<h3 id="Thread"><a href="#Thread" class="headerlink" title="Thread"></a>Thread</h3><p>Main Thread (aka UI thread) : 모든 input / output<br>Background Thread : input / output 을 제외하고 나머지 모두 (기다려야하는것)</p>
+<p>AsyncTask : onPreExcute, doInBackground (Background 스레드), onProgressUpdate, onPostExcute<br>syncAdapter : GOM이 알아서 업데이트해줌 (asyncTask랑은 반대)</p>
 
       
     </div>
