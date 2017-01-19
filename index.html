@@ -57,7 +57,7 @@
         
           <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Zoeken"></a>
       </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://jeongsangphil.github.io"></form>
@@ -91,7 +91,9 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>Textview이용 : html처럼 태그 내에 적거나 태그 밖에 적기  </p>
-<h3 id="java"><a href="#java" class="headerlink" title="java"></a>java</h3><p>MainActivity 보이는 페이지<br>MainActivityFragment 그림이나 값을 갖다 붙이기위한.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">배열 값 set, List배열에 할당, Adapter를 이용해서 보여지도록</div><div class="line">ex) String[] 배열명(data) = &#123;&quot;1&quot;,&quot;2&quot;&#125;; // 배열생성</div><div class="line">List&lt;자료형(String)&gt; 리스트명(weekForecast) = new ArrayList&lt;(String)&gt;(Arrays.asList((data)); // 리스트에 배열 할당</div><div class="line">ArrayAdapter&lt;String&gt; mForefastAdapter = new ArrayAdapter&lt;String&gt;(getActivity(). R.layout.list_item_forecast, R.id.list_item_forecast_textview, weekForecast); // 값을 Adapter 만들기 </div><div class="line">View view = inflater.inflate(R.layout.fragment_main,container, false);  </div><div class="line">ListView listView = (ListView)view.findViewByid(R.id.listview_forecast);</div><div class="line">ListView.setAdapter(mForecastAdapter); // adapterview에 보여지도록 설정</div></pre></td></tr></table></figure></p>
+<h3 id="java"><a href="#java" class="headerlink" title="java"></a>java</h3><p>MainActivity 보이는 페이지  </p>
+<p>MainActivityFragment 그림이나 값을 갖다 붙이기위한.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">배열 값 set, List배열에 할당, Adapter를 이용해서 보여지도록</div><div class="line">ex) String[] 배열명(data) = &#123;&quot;1&quot;,&quot;2&quot;&#125;; // 배열생성</div><div class="line">List&lt;자료형(String)&gt; 리스트명(weekForecast) = new ArrayList&lt;(String)&gt;(Arrays.asList((data)); // 리스트에 배열 할당</div><div class="line">ArrayAdapter&lt;String&gt; mForefastAdapter = new ArrayAdapter&lt;String&gt;(getActivity(). R.layout.list_item_forecast, R.id.list_item_forecast_textview, weekForecast); // 값을 Adapter 만들기 </div><div class="line">View view = inflater.inflate(R.layout.fragment_main,container, false);  </div><div class="line">ListView listView = (ListView)view.findViewByid(R.id.listview_forecast);</div><div class="line">ListView.setAdapter(mForecastAdapter); // adapterview에 보여지도록 설정</div></pre></td></tr></table></figure>
 <ul>
 <li><p>Adapter : 값을 만드는것  </p>
 </li>
@@ -99,9 +101,15 @@
 <p>​</p>
 </li>
 </ul>
-<h3 id="resource"><a href="#resource" class="headerlink" title="resource"></a>resource</h3><p>drawable : 바꿀수있는 그림<br>layout : 각 보여지는 페이지(layout) 설정, 새로추가 : layout resource file<br>종류 : FrameLayout(한페이지만), linearLayout(선으로 나눠짐), gravityLayout(정렬), TableLayout(순서상관x html table)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;TextView</div><div class="line">android:id = &quot;@+id/아이디적기&quot;//id설정</div><div class="line">android:gravity = &quot;정렬방법&quot;</div><div class="line">android:minHeight = &quot;?android:attr/listPreferredItemHeight&quot; // 최소 높이</div><div class="line">android:text = &quot;보여질 텍스트&quot; /&gt;</div></pre></td></tr></table></figure></p>
-<p>menu : 메뉴버튼누르거나 … 누르면 나오는 메뉴의 속성 (settings)<br>mipmap : 바꾸지 않고 기본으로 하나만 사용하는 그림 넣는곳<br>values : 모든 String은 여기 들어가야함</p>
-<h3 id="단축키"><a href="#단축키" class="headerlink" title="단축키"></a>단축키</h3><p>ctrl + q : 라이브러리, 사용법, 무슨값을넣어야하는지 보기<br>alt + enter : 오류 해결(넣어야할거 자동 추가)<br>ctrl + space : 넣을수있는경로나 값 추천<br>ctrl + alt + l : 자동정렬 (모두선택후)   </p>
+<h3 id="resource"><a href="#resource" class="headerlink" title="resource"></a>resource</h3><p>drawable : 바꿀수있는 그림<br>layout : 각 보여지는 페이지(layout) 설정, 새로추가 : layout resource file<br>종류 : FrameLayout(한페이지만), linearLayout(선으로 나눠짐), gravityLayout(정렬), TableLayout(순서상관x html table)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&lt;TextView</div><div class="line">android:id = &quot;@+id/아이디적기&quot;//id설정</div><div class="line">android:gravity = &quot;정렬방법&quot;</div><div class="line">android:minHeight = &quot;?android:attr/listPreferredItemHeight&quot; // 최소 높이</div><div class="line">android:text = &quot;보여질 텍스트&quot; /&gt;</div><div class="line">// sp : textSize , dp : 화면 너비, 높이</div></pre></td></tr></table></figure></p>
+<p>menu : 메뉴버튼누르거나 … 누르면 나오는 메뉴의 속성 (settings)   </p>
+<p>mipmap : 바꾸지 않고 기본으로 하나만 사용하는 그림 넣는곳  </p>
+<p>values : 모든 String은 여기 들어가야함</p>
+<h3 id="단축키"><a href="#단축키" class="headerlink" title="단축키"></a>단축키</h3><p>ctrl + q : 라이브러리, 사용법, 무슨값을넣어야하는지 보기</p>
+<p>ctrl + o : 함수 만들기</p>
+<p>alt + enter : 오류 해결(넣어야할거 자동 추가)  </p>
+<p>ctrl + space : 넣을수있는경로나 값 추천  </p>
+<p>ctrl + alt + L : 자동정렬 (모두선택후)   </p>
 <h3 id="log"><a href="#log" class="headerlink" title="log"></a>log</h3><p>log의 종류 : error/warn/debug/verbose<br><code>log.e(String tag, String msg); // tag는 activity/class 이름, msg는 표시할 메세지</code><br>log 갯수는 한정, 적당히 표시해야함  </p>
 <h3 id="Thread"><a href="#Thread" class="headerlink" title="Thread"></a>Thread</h3><p>Main Thread (aka UI thread) : 모든 input / output<br>Background Thread : input / output 을 제외하고 나머지 모두 (기다려야하는것)</p>
 <p>AsyncTask : onPreExcute, doInBackground (Background 스레드), onProgressUpdate, onPostExcute<br>syncAdapter : GOM이 알아서 업데이트해줌 (asyncTask랑은 반대)  </p>
@@ -128,14 +136,35 @@
 <p>ex) 어플에서 전화번호 누르면 전화앱 여러개 선택할수있음, sms, 메일주소 등</p>
 <p>사용방법</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">Intent i = new Intent(getActivity(), DetailActivity.class); // Intent 생성</div><div class="line"></div><div class="line">i.putExtra(Intent.EXTRA_TEXT, forecast); // i에 값을 넣는다. ()괄호안 값들은 json의 key와 value.</div></pre></td></tr></table></figure>
+<p>Explicit Intent(유기명)</p>
+<p>Intent 선언후</p>
+<ul>
+<li>i.putExtra(key, value) : 값 넣기 </li>
+<li>i.getStringExtra(name) : 값 받아오기 name은 key값</li>
+<li>i.hasExtra(name) : 가지고있는지?</li>
+<li>i.isEmpty ? : 비어있는지?</li>
+</ul>
+<p>Implicit Intent(무기명)</p>
 <h3 id="Adapter"><a href="#Adapter" class="headerlink" title="Adapter"></a>Adapter</h3><p>adapter : 값을 얻어와서 저장된걸 만드는 것</p>
 <p>adapterview : adapter를 보여주는 것. (표시될 위치와 바뀌는 부분)</p>
-<p>ex) 몇개의 데이터가 있는지?  </p>
+<p>ex) 몇개의 데이터가 있는지?  , setOnItemClickListener사용할때 () 괄호안에 AdapterView사용</p>
+<h3 id="안드로이드-중요-4대-개념"><a href="#안드로이드-중요-4대-개념" class="headerlink" title="안드로이드 중요 4대 개념"></a>안드로이드 중요 4대 개념</h3><ul>
+<li>Activity, intent(통로)</li>
+<li>broadcast, broadcast receiver </li>
+<li>content provider</li>
+<li>service</li>
+</ul>
+<p>setting</p>
+<p>Implicit intent</p>
+<p>개발자 모드, 드라이버 설치해오기, 폰에 날씨앱 돌아가도록?</p>
+<p>share action provider : 무기명 만들기 , 이전에는 사용하기 </p>
+<p>json 몽고디비</p>
+<p>코드읽고 해석해보기 </p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://jeongsangphil.github.io/2017/01/12/Android-Studio/" data-id="cixu35xcc00004sm0wwnj74l8" class="article-share-link">Share</a>
+      <a data-url="http://jeongsangphil.github.io/2017/01/12/Android-Studio/" data-id="ciy3tsqee00001sm0xx57mmdb" class="article-share-link">Delen</a>
       
       
     </footer>
@@ -177,7 +206,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://jeongsangphil.github.io/2017/01/04/how-to-use-blog/" data-id="cixu35xcn00034sm0l9jntc6r" class="article-share-link">Share</a>
+      <a data-url="http://jeongsangphil.github.io/2017/01/04/how-to-use-blog/" data-id="ciy3tsqek00011sm0hs067m4z" class="article-share-link">Delen</a>
       
       
     </footer>
@@ -228,7 +257,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://jeongsangphil.github.io/2017/01/04/javascript/" data-id="cixu35xci00014sm0zet5zzgi" class="article-share-link">Share</a>
+      <a data-url="http://jeongsangphil.github.io/2017/01/04/javascript/" data-id="ciy3tsqeo00021sm09gim5iai" class="article-share-link">Delen</a>
       
       
     </footer>
@@ -273,7 +302,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://jeongsangphil.github.io/2017/01/03/html_css/" data-id="cixu35xcl00024sm0yayhr1z0" class="article-share-link">Share</a>
+      <a data-url="http://jeongsangphil.github.io/2017/01/03/html_css/" data-id="ciy3tsqf500031sm08p1e2nri" class="article-share-link">Delen</a>
       
       
     </footer>
@@ -298,7 +327,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
+    <h3 class="widget-title">Archieven</h3>
     <div class="widget">
       <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">January 2017</a></li></ul>
     </div>
@@ -308,7 +337,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
+    <h3 class="widget-title">Recente berichten</h3>
     <div class="widget">
       <ul>
         
