@@ -5,25 +5,37 @@
   
   <title>Android Studio | SANGPHIL blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Textview이용 : html처럼 태그 내에 적거나 태그 밖에 적기  
-javaMainActivity 보이는 페이지  
-MainActivityFragment 그림이나 값을 갖다 붙이기위한.
-1234567배열 값 set, List배열에 할당, Adapter를 이용해서 보여지도록ex) String[] 배열명(data) = &amp;#123;&amp;quot;1&amp;quot;,">
+  <meta name="description" content="안드로이드 중요 4대 개념
+Activity, intent(정보전달을 위한 통로) 화면
+broadcast, broadcast receiver : 안드로이드에서 돌아가는 메세지 
+content provider : 
+service
+
+기본 infoTextview이용 : html처럼 태그 내에 적거나 태그 밖에 적기  
+javaMainActivity 보이는 페이지">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Android Studio">
 <meta property="og:url" content="http://jeongsangphil.github.io/2017/01/12/Android-Studio/index.html">
 <meta property="og:site_name" content="SANGPHIL blog">
-<meta property="og:description" content="Textview이용 : html처럼 태그 내에 적거나 태그 밖에 적기  
-javaMainActivity 보이는 페이지  
-MainActivityFragment 그림이나 값을 갖다 붙이기위한.
-1234567배열 값 set, List배열에 할당, Adapter를 이용해서 보여지도록ex) String[] 배열명(data) = &amp;#123;&amp;quot;1&amp;quot;,">
-<meta property="og:updated_time" content="2017-01-19T03:35:47.812Z">
+<meta property="og:description" content="안드로이드 중요 4대 개념
+Activity, intent(정보전달을 위한 통로) 화면
+broadcast, broadcast receiver : 안드로이드에서 돌아가는 메세지 
+content provider : 
+service
+
+기본 infoTextview이용 : html처럼 태그 내에 적거나 태그 밖에 적기  
+javaMainActivity 보이는 페이지">
+<meta property="og:updated_time" content="2017-01-23T05:11:55.158Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android Studio">
-<meta name="twitter:description" content="Textview이용 : html처럼 태그 내에 적거나 태그 밖에 적기  
-javaMainActivity 보이는 페이지  
-MainActivityFragment 그림이나 값을 갖다 붙이기위한.
-1234567배열 값 set, List배열에 할당, Adapter를 이용해서 보여지도록ex) String[] 배열명(data) = &amp;#123;&amp;quot;1&amp;quot;,">
+<meta name="twitter:description" content="안드로이드 중요 4대 개념
+Activity, intent(정보전달을 위한 통로) 화면
+broadcast, broadcast receiver : 안드로이드에서 돌아가는 메세지 
+content provider : 
+service
+
+기본 infoTextview이용 : html처럼 태그 내에 적거나 태그 밖에 적기  
+javaMainActivity 보이는 페이지">
   
     <link rel="alternate" href="/atom.xml" title="SANGPHIL blog" type="application/atom+xml">
   
@@ -67,7 +79,7 @@ MainActivityFragment 그림이나 값을 갖다 붙이기위한.
         
           <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Zoeken"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
       </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://jeongsangphil.github.io"></form>
@@ -98,8 +110,14 @@ MainActivityFragment 그림이나 값을 갖다 붙이기위한.
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Textview이용 : html처럼 태그 내에 적거나 태그 밖에 적기  </p>
-<h3 id="java"><a href="#java" class="headerlink" title="java"></a>java</h3><p>MainActivity 보이는 페이지  </p>
+        <h1 id="안드로이드-중요-4대-개념"><a href="#안드로이드-중요-4대-개념" class="headerlink" title="안드로이드 중요 4대 개념"></a>안드로이드 중요 4대 개념</h1><ul>
+<li>Activity, intent(정보전달을 위한 통로) 화면</li>
+<li>broadcast, broadcast receiver : 안드로이드에서 돌아가는 메세지 </li>
+<li>content provider : </li>
+<li>service</li>
+</ul>
+<h1 id="기본-info"><a href="#기본-info" class="headerlink" title="기본 info"></a>기본 info</h1><p>Textview이용 : html처럼 태그 내에 적거나 태그 밖에 적기  </p>
+<h2 id="java"><a href="#java" class="headerlink" title="java"></a>java</h2><p>MainActivity 보이는 페이지  </p>
 <p>MainActivityFragment 그림이나 값을 갖다 붙이기위한.</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">배열 값 set, List배열에 할당, Adapter를 이용해서 보여지도록</div><div class="line">ex) String[] 배열명(data) = &#123;&quot;1&quot;,&quot;2&quot;&#125;; // 배열생성</div><div class="line">List&lt;자료형(String)&gt; 리스트명(weekForecast) = new ArrayList&lt;(String)&gt;(Arrays.asList((data)); // 리스트에 배열 할당</div><div class="line">ArrayAdapter&lt;String&gt; mForefastAdapter = new ArrayAdapter&lt;String&gt;(getActivity(). R.layout.list_item_forecast, R.id.list_item_forecast_textview, weekForecast); // 값을 Adapter 만들기 </div><div class="line">View view = inflater.inflate(R.layout.fragment_main,container, false);  </div><div class="line">ListView listView = (ListView)view.findViewByid(R.id.listview_forecast);</div><div class="line">ListView.setAdapter(mForecastAdapter); // adapterview에 보여지도록 설정</div></pre></td></tr></table></figure>
 <ul>
@@ -109,36 +127,36 @@ MainActivityFragment 그림이나 값을 갖다 붙이기위한.
 <p>​</p>
 </li>
 </ul>
-<h3 id="resource"><a href="#resource" class="headerlink" title="resource"></a>resource</h3><p>drawable : 바꿀수있는 그림<br>layout : 각 보여지는 페이지(layout) 설정, 새로추가 : layout resource file<br>종류 : FrameLayout(한페이지만), linearLayout(선으로 나눠짐), gravityLayout(정렬), TableLayout(순서상관x html table)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&lt;TextView</div><div class="line">android:id = &quot;@+id/아이디적기&quot;//id설정</div><div class="line">android:gravity = &quot;정렬방법&quot;</div><div class="line">android:minHeight = &quot;?android:attr/listPreferredItemHeight&quot; // 최소 높이</div><div class="line">android:text = &quot;보여질 텍스트&quot; /&gt;</div><div class="line">// sp : textSize , dp : 화면 너비, 높이</div></pre></td></tr></table></figure></p>
+<h2 id="resource"><a href="#resource" class="headerlink" title="resource"></a>resource</h2><p>drawable : 바꿀수있는 그림<br>layout : 각 보여지는 페이지(layout) 설정, 새로추가 : layout resource file<br>종류 : FrameLayout(한페이지만), linearLayout(선으로 나눠짐), gravityLayout(정렬), TableLayout(순서상관x html table)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&lt;TextView</div><div class="line">android:id = &quot;@+id/아이디적기&quot;//id설정</div><div class="line">android:gravity = &quot;정렬방법&quot;</div><div class="line">android:minHeight = &quot;?android:attr/listPreferredItemHeight&quot; // 최소 높이</div><div class="line">android:text = &quot;보여질 텍스트&quot; /&gt;</div><div class="line">// sp : textSize , dp : 화면 너비, 높이</div></pre></td></tr></table></figure></p>
 <p>menu : 메뉴버튼누르거나 … 누르면 나오는 메뉴의 속성 (settings)   </p>
 <p>mipmap : 바꾸지 않고 기본으로 하나만 사용하는 그림 넣는곳  </p>
 <p>values : 모든 String은 여기 들어가야함</p>
-<h3 id="단축키"><a href="#단축키" class="headerlink" title="단축키"></a>단축키</h3><p>ctrl + q : 라이브러리, 사용법, 무슨값을넣어야하는지 보기</p>
-<p>ctrl + o : 함수 만들기</p>
+<h2 id="단축키"><a href="#단축키" class="headerlink" title="단축키"></a>단축키</h2><p>ctrl + q : 라이브러리, 사용법, 무슨값을넣어야하는지 보기</p>
+<p>ctrl + o : 함수 만들기 (override)</p>
 <p>alt + enter : 오류 해결(넣어야할거 자동 추가)  </p>
 <p>ctrl + space : 넣을수있는경로나 값 추천  </p>
 <p>ctrl + alt + L : 자동정렬 (모두선택후)   </p>
-<h3 id="log"><a href="#log" class="headerlink" title="log"></a>log</h3><p>log의 종류 : error/warn/debug/verbose<br><code>log.e(String tag, String msg); // tag는 activity/class 이름, msg는 표시할 메세지</code><br>log 갯수는 한정, 적당히 표시해야함  </p>
+<h2 id="LOG"><a href="#LOG" class="headerlink" title="LOG"></a>LOG</h2><p>log의 종류 : error/warn/info(현상황)/debug(개발시에만)/verbose(개발시에만)<br><code>log.e(String tag, String msg); // tag는 activity/class 이름, msg는 표시할 메세지</code><br>log 갯수는 한정, 적당히 표시해야함  </p>
 <h3 id="Thread"><a href="#Thread" class="headerlink" title="Thread"></a>Thread</h3><p>Main Thread (aka UI thread) : 모든 input / output<br>Background Thread : input / output 을 제외하고 나머지 모두 (기다려야하는것)</p>
 <p>AsyncTask : onPreExcute, doInBackground (Background 스레드), onProgressUpdate, onPostExcute<br>syncAdapter : GOM이 알아서 업데이트해줌 (asyncTask랑은 반대)  </p>
-<h3 id="주소경로-의미"><a href="#주소경로-의미" class="headerlink" title="주소경로 의미"></a>주소경로 의미</h3><p><a href="http://api.openweathermap.org/data/2.5/forecast/daily?q=Seoul:kr&amp;mode=json&amp;units=metric&amp;cnt=7&amp;appid=ebd4c9e7404d1c92b00c0f6638268b6a" target="_blank" rel="external">http://api.openweathermap.org/data/2.5/forecast/daily?q=Seoul:kr&amp;mode=json&amp;units=metric&amp;cnt=7&amp;appid=ebd4c9e7404d1c92b00c0f6638268b6a</a> </p>
+<h1 id="Activity-amp-Intent"><a href="#Activity-amp-Intent" class="headerlink" title="Activity &amp; Intent"></a>Activity &amp; Intent</h1><h2 id="주소경로-의미"><a href="#주소경로-의미" class="headerlink" title="주소경로 의미"></a>주소경로 의미</h2><p><a href="http://api.openweathermap.org/data/2.5/forecast/daily?q=Seoul:kr&amp;mode=json&amp;units=metric&amp;cnt=7&amp;appid=ebd4c9e7404d1c92b00c0f6638268b6a" target="_blank" rel="external">http://api.openweathermap.org/data/2.5/forecast/daily?q=Seoul:kr&amp;mode=json&amp;units=metric&amp;cnt=7&amp;appid=ebd4c9e7404d1c92b00c0f6638268b6a</a> </p>
 <p>함수와 비슷하다고 생각</p>
 <p><code>function sum(num1,num2){}</code></p>
 <p><code>sum(1,2);</code></p>
 <p>위와같은 함수, 호출이있을때 num1과 num2가 파라미터(고정), 호출시 1과 2가 전달자라하면</p>
 <p>주소경로에서 daily는 함수명, q, mode, units, cnt, appid는 파라미터 (고정)</p>
 <p>Seoul:kr , json , metric , 7 , ebd4c9e7404d1c92b00c0f6638268b6a 는 전달자이다 (원하는대로 변경 가능)  </p>
-<h3 id="Json"><a href="#Json" class="headerlink" title="Json"></a>Json</h3><p>{} 대괄호로 시작되는 코드. </p>
+<h2 id="Json"><a href="#Json" class="headerlink" title="Json"></a>Json</h2><p>{} 대괄호로 시작되는 코드. </p>
 <p>구조는 key와 value의 형태.</p>
 <p>자료형 (value 형태) :  Object형, 일반형 (대괄호로 시작, 1~여러개의 object), 배열형(중괄호[] 시작, 대괄호로 순서 구분)</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  	&quot;name&quot; = 1; // object</div><div class="line">  	&quot;phone&quot; = &#123;</div><div class="line">      	&quot;first&quot; = 0101111111;</div><div class="line">      	&quot;two&quot; = 01022222222;</div><div class="line">  	&#125;</div><div class="line">  	&quot;pen&quot; = [</div><div class="line">  		&#123; // 1</div><div class="line">          	&quot;name&quot; = &quot;one&quot;;</div><div class="line">  		&#125;,</div><div class="line">  		&#123; // 2</div><div class="line">          	&quot;name&quot; = &quot;two&quot;;</div><div class="line">  		&#125;</div><div class="line">  	]</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h3 id="화면-누르기"><a href="#화면-누르기" class="headerlink" title="화면 누르기"></a>화면 누르기</h3><p>방법 ? : touch : 전체 / select (listview) / click</p>
+<h2 id="화면-누르기"><a href="#화면-누르기" class="headerlink" title="화면 누르기"></a>화면 누르기</h2><p>방법 ? : touch : 전체 / select (listview) / click</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line">방법 1 : onClickListener를 이용. (기본적으로 사용)</div><div class="line">public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) &#123;</div><div class="line">        View view = inflater.inflate(R.layout.fragment_main, container, false);</div><div class="line">        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() &#123;</div><div class="line">            @Override</div><div class="line">            public void onItemClick(AdapterView&lt;?&gt; parent, View view, int position, long id) &#123;</div><div class="line">                Toast.makeText(getActivity(), &quot;string&quot;, Toast.LENGTH_SHORT).show(); // Toast</div><div class="line">            &#125;</div><div class="line">        &#125;);</div><div class="line">방법 2 : android:onClick를 이용해서 xml내 버튼에 선언 후 MainActivity에서 하기</div><div class="line">public void btnToast(View view) &#123;</div><div class="line">        Button viewbutton = (Button) view; // 클릭된 뷰를 버튼으로 받기 ?</div><div class="line"></div><div class="line">        for (Button buttonarr : getbutton) &#123;</div><div class="line">            if (viewbutton == buttonarr) &#123;</div><div class="line">                Toast.makeText(this, viewbutton.getText(), Toast.LENGTH_SHORT).show(); // Toast</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">&#125;</div><div class="line">방법 3 : setOnClickListener(this) 이용. mainActivity 내 onClick 함수 하나만 씀</div><div class="line">버튼 클릭시 TextView를 찾아 TextView의 Text에 Button의 text값을 넣기</div><div class="line">protected void onCreate(Bundle savedInstanceState) &#123;</div><div class="line">		button[4] = (Button) findViewById(R.id.button4);</div><div class="line">		button[4].setOnClickListener(this);</div><div class="line">&#125;</div><div class="line">public void onClick(View v) &#123;</div><div class="line">        TextView textView = (TextView) findViewById(R.id.textView); // 텍스트뷰 부르기?</div><div class="line">        Button getbutton = (Button) v; // View를 버튼으로 받기</div><div class="line"></div><div class="line">        textView.append(getbutton.getText()); // string 연결해서 붙이기</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h4 id="Toast"><a href="#Toast" class="headerlink" title="Toast"></a>Toast</h4><p>간단하게 표시하는 msg. ex) true / false같이 잠깐 표시(화면전환 x)  </p>
-<h4 id="Activity"><a href="#Activity" class="headerlink" title="Activity"></a>Activity</h4><p>Activity : 화면 하나 전체</p>
+<h3 id="Toast"><a href="#Toast" class="headerlink" title="Toast"></a>Toast</h3><p>간단하게 표시하는 msg. ex) true / false같이 잠깐 표시(화면전환 x)  </p>
+<h3 id="Activity"><a href="#Activity" class="headerlink" title="Activity"></a>Activity</h3><p>Activity : 화면 하나 전체</p>
 <p>ActivityFragment : 화면에 표시할(갖다붙이는) 것들의 그룹, 화면 바꾸는 것.</p>
 <p>StartActivity(Intent) : 화면 전환 (main Activity -&gt; detail Activity)</p>
-<h4 id="Intent"><a href="#Intent" class="headerlink" title="Intent"></a>Intent</h4><p>Intent : Activity간 화면전환할 때 통신을 위한 방법.  ex) db 로그인할때 값 전달, session</p>
+<h3 id="Intent"><a href="#Intent" class="headerlink" title="Intent"></a>Intent</h3><p>Intent : Activity간 화면전환할 때 통신을 위한 방법.  ex) db 로그인할때 값 전달, session</p>
 <p>Explicit Intent(유기명) : 실제 이름 만들고 보내는사람 받는사람 존재</p>
 <p>Implicit Intent(무기명) : 해야할 일은 정해져있으나 어떤 대상에 제한되지 않음</p>
 <p>ex) 어플에서 전화번호 누르면 전화앱 여러개 선택할수있음, sms, 메일주소 등</p>
@@ -156,23 +174,74 @@ MainActivityFragment 그림이나 값을 갖다 붙이기위한.
 <h3 id="Adapter"><a href="#Adapter" class="headerlink" title="Adapter"></a>Adapter</h3><p>adapter : 값을 얻어와서 저장된걸 만드는 것</p>
 <p>adapterview : adapter를 보여주는 것. (표시될 위치와 바뀌는 부분)</p>
 <p>ex) 몇개의 데이터가 있는지?  , setOnItemClickListener사용할때 () 괄호안에 AdapterView사용</p>
-<h3 id="안드로이드-중요-4대-개념"><a href="#안드로이드-중요-4대-개념" class="headerlink" title="안드로이드 중요 4대 개념"></a>안드로이드 중요 4대 개념</h3><ul>
-<li>Activity, intent(통로)</li>
-<li>broadcast, broadcast receiver </li>
-<li>content provider</li>
-<li>service</li>
-</ul>
-<p>setting</p>
+<h1 id="broadcast-broadcast-receiver"><a href="#broadcast-broadcast-receiver" class="headerlink" title="broadcast, broadcast receiver"></a>broadcast, broadcast receiver</h1><h1 id="content-provider"><a href="#content-provider" class="headerlink" title="content provider"></a>content provider</h1><h1 id="service"><a href="#service" class="headerlink" title="service"></a>service</h1><p>setting</p>
 <p>Implicit intent</p>
 <p>개발자 모드, 드라이버 설치해오기, 폰에 날씨앱 돌아가도록?</p>
 <p>share action provider : 무기명 만들기 , 이전에는 사용하기 </p>
 <p>json 몽고디비</p>
 <p>코드읽고 해석해보기 </p>
+<p>가중치(무게), 메뉴 순서, </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">android:orderInCategory=&quot;100&quot;</div></pre></td></tr></table></figure>
+<p>text input : 사용자 키보드입력 받기, 문자/숫자/password 처럼 형식 설정가능 </p>
+<p>radio button : 라디오 그룹안에 넣어야함 선택지끼리의 그룹중 하나만 선택가능 </p>
+<p>hint text : id/password처럼 입력해야할거로 표시해주고 입력시 사라지기 ex)로 보여주기, ui적 감성</p>
+<p>ux는 사용자가 써본 경험의 차이. (design영역) user expex / 회원가입처럼</p>
+<p>setting ; 기본적인것 넣기, 다 넣지말기 </p>
+<p>setting guideline 참고하기 </p>
+<p>모든 설정값은 preferences로 저장됨 -&gt; 같은구글계정 공유 , 단 어플삭제시 사라짐</p>
+<p>기본적으로 안드로이드 어플은 key value형태로 구성되어있음 </p>
+<p>api문서볼때 class , interface인지 확인하고, 상속관계 보기 objects는 자바의 모든 클래스 </p>
+<p>preference쓰는건 shared쓰는거</p>
+<p>설정창만들기</p>
+<p>setting activity / empty</p>
+<p>자바코드로 짜는게좋지만 xml을 쓰는게 하기편함</p>
+<p>동사로시작하는건 자바의 함수명은 소문자, 그외는 대문자 </p>
+<p>preference는 preference는 key value 형태로 저장되어있음, 오류시 어플지웠다다시깔기 </p>
+<p>변수이름, 함수이름선언시</p>
+<p>클래스는 대문자로시작</p>
+<p>함수는 동사로시작 (소문자) 그외 대문자</p>
+<p>클래스 내 멤버변수는 m으로 선언 </p>
+<p>listpreference를 이용해서 라디오 구현 </p>
+<p>Shared action provider</p>
+<p>action바 에 … 삼각형 아이콘</p>
+<p>setHasOptionsMenu</p>
+<p>sharedprovider를 이용하는것 데이터 전송할때 공유하는것 , provider형태로 데이터 전송하는법</p>
+<p>Broadcast Intents</p>
+<p>action view/ send 는 지도누르면 보여주고, 보내고 -&gt; broadcast Intents </p>
+<p>방송(메세지) 가 일어남 ,ex) 컴퓨터키고 시간을 체크하던, 업데이트 체크하던.</p>
+<p>안드로이드 내에서는 항상 공유상태가 있음, 통신</p>
+<p>ex) 액션뷰로 geo를 보내면 지도앱들이 반응을하는 broadcast(메세지 전송) 이 일어남 </p>
+<p>intent filter에서 broadcast receiver로 어떤액션을 원하는지 선택함 티비볼때 원하는 채널 설정, 한개이상</p>
+<p>필터를이용해서 어떤상황이되면 메세지를보내주는 , 전체채널을 쏴주고, 원하는거 골라서.. ex) 케이블 tv 원하는채널 </p>
+<p>2가지방법 </p>
+<ol>
+<li><p>xml</p>
+<p>티비가 항상 켜져있는 (receiver가 항상) ,  끌수없음, 한채널만같이 사용</p>
+<p>ex) 어플이 항상 켜져있어야 , ex) 가계부앱 , 카톡, 배터리 % 알림     // 언제어디서든 필요</p>
+</li>
+<li><p>code로(자바)</p>
+<p>앱이 실행중에만, 티비가 켜져있을때에만 (원할때만) // 실행될때만 필요 </p>
+<p>ex) mp3 사용시 </p>
+</li>
+</ol>
+<p>contant provider : 데이터 주고받고 (얻어오기),  각각 앱의 고유한 저장공간을 연결해서 </p>
+<p>서비스 : 백그라운드에서 돌아가는 간단한 백그라운드 작업 ?</p>
+<p>review</p>
+<p>listview item select</p>
+<p>Toast</p>
+<p>Activity</p>
+<p>Setting</p>
+<p>Intent</p>
+<p>share action provider</p>
+<p>broadcast </p>
+<p>string 얻는 방법 </p>
+<p>toString()</p>
+<p>getString()</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://jeongsangphil.github.io/2017/01/12/Android-Studio/" data-id="ciy3tsqee00001sm0xx57mmdb" class="article-share-link">Delen</a>
+      <a data-url="http://jeongsangphil.github.io/2017/01/12/Android-Studio/" data-id="ciy3tsqee00001sm0xx57mmdb" class="article-share-link">Share</a>
       
       
     </footer>
@@ -183,7 +252,7 @@ MainActivityFragment 그림이나 값을 갖다 붙이기위한.
   
   
     <a href="/2017/01/04/how-to-use-blog/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Ouder</strong>
+      <strong class="article-nav-caption">Older</strong>
       <div class="article-nav-title">블로그 사용 방법</div>
     </a>
   
@@ -206,7 +275,7 @@ MainActivityFragment 그림이나 값을 갖다 붙이기위한.
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Archieven</h3>
+    <h3 class="widget-title">Archives</h3>
     <div class="widget">
       <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">January 2017</a></li></ul>
     </div>
@@ -216,7 +285,7 @@ MainActivityFragment 그림이나 값을 갖다 붙이기위한.
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Recente berichten</h3>
+    <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
         
