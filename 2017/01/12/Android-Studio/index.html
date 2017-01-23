@@ -25,7 +25,7 @@ service
 
 기본 infoTextview이용 : html처럼 태그 내에 적거나 태그 밖에 적기  
 api문서볼때 class , interface">
-<meta property="og:updated_time" content="2017-01-23T08:28:03.232Z">
+<meta property="og:updated_time" content="2017-01-23T08:48:46.522Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android Studio">
 <meta name="twitter:description" content="안드로이드 중요 4대 개념
@@ -138,23 +138,29 @@ api문서볼때 class , interface">
 <p>alt + enter : 오류 해결(넣어야할거 자동 추가)  </p>
 <p>ctrl + space : 넣을수있는경로나 값 추천  </p>
 <p>ctrl + alt + L : 자동정렬 (모두선택후)   </p>
-<h2 id="LOG"><a href="#LOG" class="headerlink" title="LOG"></a>LOG</h2><p>log의 종류 : error/warn/info(현상황)/debug(개발시에만)/verbose(개발시에만)<br><code>log.e(String tag, String msg); // tag는 activity/class 이름, msg는 표시할 메세지</code><br>log 갯수는 한정, 적당히 표시해야함  </p>
-<h2 id="Thread"><a href="#Thread" class="headerlink" title="Thread"></a>Thread</h2><p>Main Thread (aka UI thread) : 모든 input / output<br>Background Thread : input / output 을 제외하고 나머지 모두 (기다려야하는것)</p>
-<p>AsyncTask : onPreExcute, doInBackground (Background 스레드), onProgressUpdate, onPostExcute<br>syncAdapter : GOM이 알아서 업데이트해줌 (asyncTask랑은 반대)  </p>
+<h2 id="LOG"><a href="#LOG" class="headerlink" title="LOG"></a>LOG</h2><p>log의 종류 : error/warn/info(현상황)/debug(개발시에만)/verbose(개발시에만)</p>
+<p><code>log.e(String tag, String msg); // tag는 activity/class 이름, msg는 표시할 메세지</code></p>
+<p>log 갯수는 한정, 적당히 표시해야함  </p>
+<h2 id="AsyncTask"><a href="#AsyncTask" class="headerlink" title="AsyncTask"></a>AsyncTask</h2><p>종류 : onPreExcute, doInBackground (Background 스레드), onProgressUpdate, onPostExcute</p>
+<p>클래스에 상속해줘야함 </p>
+<p>ex)  <code>public class WeatherTask extends AsyncTask&lt;void,void,void&gt;</code></p>
+<h3 id="Main-Thread"><a href="#Main-Thread" class="headerlink" title="Main Thread"></a>Main Thread</h3><p>(aka UI thread) , 모든 input / output </p>
+<h3 id="Background-Thread"><a href="#Background-Thread" class="headerlink" title="Background Thread"></a>Background Thread</h3><p>input / output 을 제외하고 나머지 모두 (기다려야하는것)</p>
+<p>syncAdapter : GOM이 알아서 업데이트해줌 (asyncTask랑은 반대)  </p>
 <h2 id="String-값을-얻는-두가지-방법"><a href="#String-값을-얻는-두가지-방법" class="headerlink" title="String 값을 얻는 두가지 방법"></a>String 값을 얻는 두가지 방법</h2><p>.toString() / .getString()</p>
 <h2 id="함수-변수-선언"><a href="#함수-변수-선언" class="headerlink" title="함수, 변수 선언"></a>함수, 변수 선언</h2><p>클래스 : 대문자로시작 / 변수명, 함수명 : 동사로시작 (소문자) 그외 대문자</p>
 <p>클래스 내 멤버변수는 m으로 시작하게 선언</p>
-<h1 id="Activity-amp-Intent"><a href="#Activity-amp-Intent" class="headerlink" title="Activity &amp; Intent"></a>Activity &amp; Intent</h1><h2 id="주소경로-의미"><a href="#주소경로-의미" class="headerlink" title="주소경로 의미"></a>주소경로 의미</h2><p><a href="http://api.openweathermap.org/data/2.5/forecast/daily?q=Seoul:kr&amp;mode=json&amp;units=metric&amp;cnt=7&amp;appid=ebd4c9e7404d1c92b00c0f6638268b6a" target="_blank" rel="external">http://api.openweathermap.org/data/2.5/forecast/daily?q=Seoul:kr&amp;mode=json&amp;units=metric&amp;cnt=7&amp;appid=ebd4c9e7404d1c92b00c0f6638268b6a</a> </p>
-<p>함수와 비슷하다고 생각</p>
-<p><code>function sum(num1,num2){}</code></p>
-<p><code>sum(1,2);</code></p>
-<p>위와같은 함수, 호출이있을때 num1과 num2가 파라미터(고정), 호출시 1과 2가 전달자라하면</p>
-<p>주소경로에서 daily는 함수명, q, mode, units, cnt, appid는 파라미터 (고정)</p>
-<p>Seoul:kr , json , metric , 7 , ebd4c9e7404d1c92b00c0f6638268b6a 는 전달자이다 (원하는대로 변경 가능)  </p>
-<h2 id="Json"><a href="#Json" class="headerlink" title="Json"></a>Json</h2><p>{} 대괄호로 시작되는 코드. </p>
+<h1 id="Activity-amp-Intent"><a href="#Activity-amp-Intent" class="headerlink" title="Activity &amp; Intent"></a>Activity &amp; Intent</h1><h2 id="Json"><a href="#Json" class="headerlink" title="Json"></a>Json</h2><p>{} 대괄호로 시작되는 코드. </p>
 <p>구조는 key와 value의 형태.</p>
 <p>자료형 (value 형태) :  Object형, 일반형 (대괄호로 시작, 1~여러개의 object), 배열형(중괄호[] 시작, 대괄호로 순서 구분)</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  	&quot;name&quot; = 1; // object</div><div class="line">  	&quot;phone&quot; = &#123;</div><div class="line">      	&quot;first&quot; = 0101111111;</div><div class="line">      	&quot;two&quot; = 01022222222;</div><div class="line">  	&#125;</div><div class="line">  	&quot;pen&quot; = [</div><div class="line">  		&#123; // 1</div><div class="line">          	&quot;name&quot; = &quot;one&quot;;</div><div class="line">  		&#125;,</div><div class="line">  		&#123; // 2</div><div class="line">          	&quot;name&quot; = &quot;two&quot;;</div><div class="line">  		&#125;</div><div class="line">  	]</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>주소경로 의미</p>
+<p><a href="http://api.openweathermap.org/data/2.5/forecast/daily?q=Seoul:kr&amp;mode=json&amp;units=metric&amp;cnt=7&amp;appid=ebd4c9e7404d1c92b00c0f6638268b6a" target="_blank" rel="external">http://api.openweathermap.org/data/2.5/forecast/daily?q=Seoul:kr&amp;mode=json&amp;units=metric&amp;cnt=7&amp;appid=ebd4c9e7404d1c92b00c0f6638268b6a</a> </p>
+<p>함수와 비슷 </p>
+<p>ex) 함수선언 :  <code>function sum(num1,num2){}</code>  , 함수사용 :  <code>sum(1,2);</code></p>
+<p>위와같은 함수, 호출이있을때 num1과 num2가 파라미터(고정), 호출시 1과 2가 전달자라하면</p>
+<p>주소경로에서 daily는 함수명, q, mode, units, cnt, appid는 파라미터 (고정)</p>
+<p>즉, <code>Seoul:kr , json , metric , 7 , ebd4c9e7404d1c92b00c0f6638268b6a</code> 는 전달자이다 (변경가능) </p>
 <h2 id="화면-누르기"><a href="#화면-누르기" class="headerlink" title="화면 누르기"></a>화면 누르기</h2><p>방법 ? : touch : 전체 / select (listview) - 사라짐? / click         -&gt; itemClickListener로 통일 (현재)</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line">방법 1 : onClickListener를 이용. (기본적으로 사용)</div><div class="line">public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) &#123;</div><div class="line">        View view = inflater.inflate(R.layout.fragment_main, container, false);</div><div class="line">        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() &#123;</div><div class="line">            @Override</div><div class="line">            public void onItemClick(AdapterView&lt;?&gt; parent, View view, int position, long id) &#123;</div><div class="line">                Toast.makeText(getActivity(), &quot;string&quot;, Toast.LENGTH_SHORT).show(); // Toast</div><div class="line">            &#125;</div><div class="line">        &#125;);</div><div class="line">방법 2 : android:onClick를 이용해서 xml내 버튼에 선언 후 MainActivity에서 하기</div><div class="line">public void btnToast(View view) &#123;</div><div class="line">        Button viewbutton = (Button) view; // 클릭된 뷰를 버튼으로 받기 ?</div><div class="line"></div><div class="line">        for (Button buttonarr : getbutton) &#123;</div><div class="line">            if (viewbutton == buttonarr) &#123;</div><div class="line">                Toast.makeText(this, viewbutton.getText(), Toast.LENGTH_SHORT).show(); // Toast</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">&#125;</div><div class="line">방법 3 : setOnClickListener(this) 이용. mainActivity 내 onClick 함수 하나만 씀</div><div class="line">버튼 클릭시 TextView를 찾아 TextView의 Text에 Button의 text값을 넣기</div><div class="line">protected void onCreate(Bundle savedInstanceState) &#123;</div><div class="line">		button[4] = (Button) findViewById(R.id.button4);</div><div class="line">		button[4].setOnClickListener(this);</div><div class="line">&#125;</div><div class="line">public void onClick(View v) &#123;</div><div class="line">        TextView textView = (TextView) findViewById(R.id.textView); // 텍스트뷰 부르기?</div><div class="line">        Button getbutton = (Button) v; // View를 버튼으로 받기</div><div class="line"></div><div class="line">        textView.append(getbutton.getText()); // string 연결해서 붙이기</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <h3 id="Toast"><a href="#Toast" class="headerlink" title="Toast"></a>Toast</h3><p>간단하게 표시하는 msg. ex) true / false같이 잠깐 표시(화면전환 x)  </p>
@@ -190,7 +196,7 @@ api문서볼때 class , interface">
 <li>4개의 함수 인자 : context : getActivity() , 가져올 layout, 표현할 곳의 id, data </li>
 </ul>
 <h2 id="Menu"><a href="#Menu" class="headerlink" title="Menu"></a>Menu</h2><p>설정 메뉴 (Settings) : 다 넣지말고, 기본적인것만 넣기  (setting guideline 참고)</p>
-<p>메뉴 가중치(무게) 값으로 순서 정하기</p>
+<p>메뉴 가중치(무게) 값으로 순서 정하기, menu_main.xml내 menu태그안에 설정 </p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">android:orderInCategory=&quot;100&quot;</div></pre></td></tr></table></figure>
 <p>setHasOptionsMenu : 메뉴 있나 체크 </p>
 <p>Shared (action) provider : (공유버튼), 이용하는것 데이터 전송할때 공유하는것 , provider형태로 데이터 전송하는법</p>
@@ -205,12 +211,12 @@ api문서볼때 class , interface">
 <p>ex) 액션뷰로 geo를 보내면 지도앱들이 반응을하는 broadcast(메세지 전송) 이 일어남 </p>
 <p>intent filter에서 broadcast receiver로 어떤액션을 원하는지 선택함. </p>
 <p>어떤 상황이되면 메세지를보내주는방식  ,전체채널을 쏴주고, 원하는거 골라서봄  ex) 케이블 tv 원하는 채널  선택</p>
-<h2 id="2가지방법"><a href="#2가지방법" class="headerlink" title="2가지방법"></a>2가지방법</h2><ul>
-<li><p>xml</p>
+<h2 id="Intent-filter-등록-방법"><a href="#Intent-filter-등록-방법" class="headerlink" title="Intent filter 등록 방법"></a>Intent filter 등록 방법</h2><ul>
+<li><p>xml - static</p>
 <p>티비가 항상 켜져있는 (receiver가 항상) ,  끌수없음, 한채널만같이 사용</p>
 <p>ex) 어플이 항상 켜져있어야 , ex) 가계부앱 , 카톡, 배터리 % 알림     // 언제어디서든 필요</p>
 </li>
-<li><p>code로(자바)</p>
+<li><p>code(java) - dynamic</p>
 <p>앱이 실행중에만, 티비가 켜져있을때에만 (원할때만) // 실행될때만 필요 </p>
 <p>ex) mp3 사용시 </p>
 </li>
@@ -223,7 +229,7 @@ api문서볼때 class , interface">
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://jeongsangphil.github.io/2017/01/12/Android-Studio/" data-id="ciy3tsqee00001sm0xx57mmdb" class="article-share-link">Share</a>
+      <a data-url="http://jeongsangphil.github.io/2017/01/12/Android-Studio/" data-id="ciy9upvqu000030m0n7m4txch" class="article-share-link">Share</a>
       
       
     </footer>
