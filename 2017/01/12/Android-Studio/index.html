@@ -25,7 +25,7 @@ service
 
 기본 infoTextview이용 : html처럼 태그 내에 적거나 태그 밖에 적기  
 api문서볼때 class , interface">
-<meta property="og:updated_time" content="2017-01-23T08:48:46.522Z">
+<meta property="og:updated_time" content="2017-01-24T09:49:51.494Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android Studio">
 <meta name="twitter:description" content="안드로이드 중요 4대 개념
@@ -221,10 +221,45 @@ api문서볼때 class , interface">
 <p>ex) mp3 사용시 </p>
 </li>
 </ul>
-<h1 id="content-provider"><a href="#content-provider" class="headerlink" title="content provider"></a>content provider</h1><p>contant provider : 데이터 주고받고 (얻어오기),  각각 앱의 고유한 저장공간을 연결해서 </p>
+<h1 id="content-provider"><a href="#content-provider" class="headerlink" title="content provider"></a>content provider</h1><p>contant provider : 각각 앱의 고유한 저장공간을 연결해서 데이터 주고받고 얻어오기.  </p>
+<h2 id="Activity-Lifecycle"><a href="#Activity-Lifecycle" class="headerlink" title="Activity Lifecycle"></a>Activity Lifecycle</h2><p>back버튼, parent버튼 누르는것에 따라 main, detail 간 화면전환에서 다른 동작을 한다.</p>
+<p>모든 리소스는 제한적</p>
+<ul>
+<li><p>framework 신호 : created , visible , paused(앱을 잠시 정지, 재시작시 onResume) ,  stopped , restarting , destroyed</p>
+</li>
+<li><p>method : onCreate, onStart, onResume, onPause, onStop, onRestart, onDestroy</p>
+<p>ex) 비디오 보는거랑 비슷 (생성, 시작, 보여짐, 재생, 중지, 재시작, 부수기)</p>
+</li>
+</ul>
+<p>foreground (활성화) / background : (뒤에서 돌아감) </p>
+<h3 id="focus"><a href="#focus" class="headerlink" title="focus"></a>focus</h3><p>윈도우에서 커서 깜빡이는상태를 focus 상태라함, 안드로이드에서는 보여지는 한 화면에 focus되어있다함</p>
+<p>안드로이드 회전 전, 후 화면은 다른 화면이다. 그러므로  지우고 재생성해야함.</p>
+<ul>
+<li>과정 : pause -&gt; stop -&gt; destroy -&gt; create -&gt; start -&gt; resume</li>
+</ul>
+<p>paused 상태에서 onStop method를 사용할 수 있음 (홈버튼 누른 뒤)</p>
+<ul>
+<li>목표 : lifecycle에 영향을 받지 않도록만들어야함.  </li>
+</ul>
+<p>paused상태에  종료할 준비(onstop 호출할)를 해야함 (이상적) , 실제로는 stopped 상태에서 하는게 좋음</p>
+<p>종료 준비 상태에서는 sensor listener, location updates.. 등 안써도 되는 기능은 꺼두기.</p>
+<h2 id="데이터-저장-방법"><a href="#데이터-저장-방법" class="headerlink" title="데이터 저장 방법"></a>데이터 저장 방법</h2><ol>
+<li>sharedpreference : 간단한 설정값저장 -&gt; key,value형태이므로 간단한 값들만 저장, 유연성떨어짐,</li>
+<li>SQLite db : db서버가 요청시에만 켜짐, 간단한 db , _id 필수값</li>
+</ol>
+<p>sql문 해석 : limit 1 (1개만 가져옴) , order by max desc (최고기온으로 내림차순 정렬)</p>
+<h3 id="contract"><a href="#contract" class="headerlink" title="contract"></a>contract</h3><p>db사용시 db에 접근을 통일하는 것, data contract하려면 db helper 필요.</p>
+<p>data : db저장처럼 저장가능한거 (재사용가능) , 변수의 값들은 데이터 x </p>
+<p>contract : DDL을 만드는 것 -&gt; schema를 만드는 것 (schema는 table, column으로 이루어짐)</p>
+<p>ex) WeatherContract (schema생성) </p>
+<p>SQLiteOpenHelper (db helper) : create table, db 버전 upgrade 역할.</p>
+<p>testpractice 함수 : setup (test들어감), teardown (test나옴)</p>
 <h1 id="service"><a href="#service" class="headerlink" title="service"></a>service</h1><p>서비스 : 백그라운드에서 돌아가는 간단한 백그라운드 작업 ?</p>
 <p>+</p>
 <p>json 몽고디비, 코드읽고 해석해보기 </p>
+<p>db보고 </p>
+<p>contract가 무엇인지, sqliteopenhelper ? </p>
+<p>db project로 contract + dbhelper 써서 schema 만들기? </p>
 
       
     </div>
