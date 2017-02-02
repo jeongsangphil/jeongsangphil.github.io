@@ -55,9 +55,9 @@
       </nav>
       <nav id="sub-nav">
         
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="Flux RSS"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Rechercher"></a>
       </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://jeongsangphil.github.io"></form>
@@ -93,56 +93,59 @@
         <h1 id="안드로이드-중요-4대-개념"><a href="#안드로이드-중요-4대-개념" class="headerlink" title="안드로이드 중요 4대 개념"></a>안드로이드 중요 4대 개념</h1><ul>
 <li>Activity, intent(정보전달을 위한 통로) 화면</li>
 <li>broadcast, broadcast receiver : 안드로이드에서 돌아가는 메세지 </li>
-<li>content provider : </li>
-<li>service</li>
+<li>content provider : 데이터 접근에대한 관리 담당</li>
+<li>service : </li>
 </ul>
 <h1 id="기본-info"><a href="#기본-info" class="headerlink" title="기본 info"></a>기본 info</h1><p>Textview이용 : html처럼 태그 내에 적거나 태그 밖에 적기  </p>
 <p>api문서볼때 class , interface인지 확인하고, 상속관계 보기.</p>
-<p>objects는 자바의 모든 클래스 , preference쓰는건 shared OOO… </p>
-<h2 id="java"><a href="#java" class="headerlink" title="java"></a>java</h2><p>MainActivity 보이는 페이지  </p>
-<p>MainActivityFragment 그림이나 값을 갖다 붙이기위한.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">배열 값 set, List배열에 할당, Adapter를 이용해서 보여지도록</div><div class="line">ex) String[] 배열명(data) = &#123;&quot;1&quot;,&quot;2&quot;&#125;; // 배열생성</div><div class="line">List&lt;자료형(String)&gt; 리스트명(weekForecast) = new ArrayList&lt;(String)&gt;(Arrays.asList((data)); // 리스트에 배열 할당</div><div class="line">ArrayAdapter&lt;String&gt; mForefastAdapter = new ArrayAdapter&lt;String&gt;(getActivity(). R.layout.list_item_forecast, R.id.list_item_forecast_textview, weekForecast); // 값을 Adapter 만들기 </div><div class="line">View view = inflater.inflate(R.layout.fragment_main,container, false);  </div><div class="line">ListView listView = (ListView)view.findViewByid(R.id.listview_forecast);</div><div class="line">ListView.setAdapter(mForecastAdapter); // adapterview에 보여지도록 설정</div></pre></td></tr></table></figure>
+<p>objects는 자바의 모든 클래스 </p>
+<h2 id="java"><a href="#java" class="headerlink" title="java"></a>java</h2><p>MainActivity 주로 보이는 화면  </p>
+<p>MainActivityFragment 그림, 버튼 등을 갖다 붙이기위한 것</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">배열 값 set, List배열에 할당, Adapter를 이용해서 보여지도록</div><div class="line">ex) String[] 배열명(data) = &#123;<span class="string">"1"</span>,<span class="string">"2"</span>&#125;; <span class="comment">// 배열생성</span></div><div class="line">List&lt;자료형(String)&gt; 리스트명(weekForecast) = <span class="keyword">new</span> ArrayList&lt;(String)&gt;(Arrays.asList((data)); <span class="comment">// 배열 할당</span></div><div class="line">ArrayAdapter&lt;String&gt; mForefastAdapter = <span class="keyword">new</span> ArrayAdapter&lt;String&gt;(getActivity(). R.layout.list_item_forecast, R.id.list_item_forecast_textview, weekForecast); <span class="comment">// 값을 Adapter 만들기 </span></div><div class="line">View view = inflater.inflate(R.layout.fragment_main,container, <span class="keyword">false</span>);  </div><div class="line">ListView listView = (ListView)view.findViewByid(R.id.listview_forecast);</div><div class="line">ListView.setAdapter(mForecastAdapter); <span class="comment">// adapterview에 보여지도록 설정</span></div></pre></td></tr></table></figure>
 <ul>
-<li><p>Adapter : 값을 만드는것  </p>
+<li><p>Adapter : 값을 만드는것  ex) 붕어빵 아저씨</p>
 </li>
-<li><p>AdapterView : 값을 보여지도록  </p>
+<li><p>AdapterView : 값을 보여지도록  ex) 붕어빵 진열 공간</p>
 <p>​</p>
 </li>
 </ul>
-<h2 id="resource"><a href="#resource" class="headerlink" title="resource"></a>resource</h2><p>drawable : 바꿀수있는 그림<br>layout : 각 보여지는 페이지(layout) 설정, 새로추가 : layout resource file<br>종류 : FrameLayout(한페이지만), linearLayout(선으로 나눠짐), gravityLayout(정렬), TableLayout(순서상관x html table)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&lt;TextView</div><div class="line">android:id = &quot;@+id/아이디적기&quot;//id설정</div><div class="line">android:gravity = &quot;정렬방법&quot;</div><div class="line">android:minHeight = &quot;?android:attr/listPreferredItemHeight&quot; // 최소 높이</div><div class="line">android:text = &quot;보여질 텍스트&quot; /&gt;</div><div class="line">// sp : textSize , dp : 화면 너비, 높이</div></pre></td></tr></table></figure></p>
+<h2 id="resource"><a href="#resource" class="headerlink" title="resource"></a>resource</h2><p>drawable : 그림<br>layout : 각 보여지는 페이지(layout) 설정, 새로추가 : layout resource file<br>종류 : FrameLayout(한페이지만), linearLayout(선으로 나눠짐), gravityLayout(정렬), TableLayout(순서상관x html table)<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&lt;TextView</div><div class="line">android:id = <span class="string">"@+id/아이디적기"</span><span class="comment">//id설정</span></div><div class="line">android:gravity = <span class="string">"정렬방법"</span></div><div class="line">android:minHeight = <span class="string">"?android:attr/listPreferredItemHeight"</span> <span class="comment">// 최소 높이</span></div><div class="line">android:text = <span class="string">"보여질 텍스트"</span> /&gt;</div><div class="line"><span class="comment">// sp : textSize , dp : 화면 너비, 높이</span></div></pre></td></tr></table></figure></p>
 <p>menu : 메뉴버튼누르거나 … 누르면 나오는 메뉴의 속성 (settings)   </p>
-<p>mipmap : 바꾸지 않고 기본으로 하나만 사용하는 그림 넣는곳  </p>
+<p>mipmap : 기본 그림 넣는곳  </p>
 <p>values : 모든 String은 여기 들어가야함</p>
-<h2 id="단축키"><a href="#단축키" class="headerlink" title="단축키"></a>단축키</h2><p>ctrl + q : 라이브러리, 사용법, 무슨값을넣어야하는지 보기</p>
+<h2 id="단축키"><a href="#단축키" class="headerlink" title="단축키"></a>단축키</h2><p>ctrl + q : API 문서, 무슨값을넣어야하는지 보기</p>
 <p>ctrl + o : 함수 만들기 (override)</p>
 <p>alt + enter : 오류 해결(넣어야할거 자동 추가)  </p>
 <p>ctrl + space : 넣을수있는경로나 값 추천  </p>
 <p>ctrl + alt + L : 자동정렬 (모두선택후)   </p>
-<h2 id="LOG"><a href="#LOG" class="headerlink" title="LOG"></a>LOG</h2><p>log의 종류 : error/warn/info(현상황)/debug(개발시에만)/verbose(개발시에만)</p>
+<p>ctrl + b : 기본 함수 형태 들어가서 보기 </p>
+<h2 id="LOG"><a href="#LOG" class="headerlink" title="LOG"></a>LOG</h2><p>log의 종류 : error/warn/info(현상황)/debug(개발시에만)/verbose(개발시에만, 지워줘야함)</p>
 <p><code>log.e(String tag, String msg); // tag는 activity/class 이름, msg는 표시할 메세지</code></p>
 <p>log 갯수는 한정, 적당히 표시해야함  </p>
 <h2 id="AsyncTask"><a href="#AsyncTask" class="headerlink" title="AsyncTask"></a>AsyncTask</h2><p>종류 : onPreExcute, doInBackground (Background 스레드), onProgressUpdate, onPostExcute</p>
 <p>클래스에 상속해줘야함 </p>
-<p>ex)  <code>public class WeatherTask extends AsyncTask&lt;void,void,void&gt;</code></p>
+<p>ex)  <code>public class WeatherTask extends AsyncTask&lt;void,void,void&gt; // void 고치기 , generic(class)으로</code></p>
 <h3 id="Main-Thread"><a href="#Main-Thread" class="headerlink" title="Main Thread"></a>Main Thread</h3><p>(aka UI thread) , 모든 input / output </p>
 <h3 id="Background-Thread"><a href="#Background-Thread" class="headerlink" title="Background Thread"></a>Background Thread</h3><p>input / output 을 제외하고 나머지 모두 (기다려야하는것)</p>
-<p>syncAdapter : GOM이 알아서 업데이트해줌 (asyncTask랑은 반대)  </p>
-<h2 id="String-값을-얻는-두가지-방법"><a href="#String-값을-얻는-두가지-방법" class="headerlink" title="String 값을 얻는 두가지 방법"></a>String 값을 얻는 두가지 방법</h2><p>.toString() / .getString()</p>
-<h2 id="함수-변수-선언"><a href="#함수-변수-선언" class="headerlink" title="함수, 변수 선언"></a>함수, 변수 선언</h2><p>클래스 : 대문자로시작 / 변수명, 함수명 : 동사로시작 (소문자) 그외 대문자</p>
-<p>클래스 내 멤버변수는 m으로 시작하게 선언</p>
+<h2 id="함수-변수-선언"><a href="#함수-변수-선언" class="headerlink" title="함수, 변수 선언"></a>함수, 변수 선언</h2><p>클래스 : 대문자로시작 / 변수명, 함수명 : 시작은 소문자), 그외는 음절 시작을 대문자로</p>
+<p>클래스 내 멤버변수는 m으로 시작하게 선언, static 멤버변수는 s로 시작</p>
+<h2 id="View"><a href="#View" class="headerlink" title="View"></a>View</h2><p>text input : 사용자 키보드입력 받기, 문자/숫자/password 처럼 형식 설정가능 </p>
+<p>radio button : 라디오 그룹안에 넣어야함 선택지끼리의 그룹중 하나만 선택가능</p>
+<p>hint text : id/password처럼 입력해야할거로 표시해주고 입력시 사라지기 ex)로 보여주기, ui적 감성</p>
+<p>ux는 사용자가 써본 경험의 차이. (design영역) user experience  -&gt;  ex) 회원가입</p>
+<p>testpractice 클래스 : setup 함수 (test들어감), teardown 함수 (test나옴)</p>
 <h1 id="Activity-amp-Intent"><a href="#Activity-amp-Intent" class="headerlink" title="Activity &amp; Intent"></a>Activity &amp; Intent</h1><h2 id="Json"><a href="#Json" class="headerlink" title="Json"></a>Json</h2><p>{} 대괄호로 시작되는 코드. </p>
 <p>구조는 key와 value의 형태.</p>
-<p>자료형 (value 형태) :  Object형, 일반형 (대괄호로 시작, 1~여러개의 object), 배열형(중괄호[] 시작, 대괄호로 순서 구분)</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  	&quot;name&quot; = 1; // object</div><div class="line">  	&quot;phone&quot; = &#123;</div><div class="line">      	&quot;first&quot; = 0101111111;</div><div class="line">      	&quot;two&quot; = 01022222222;</div><div class="line">  	&#125;</div><div class="line">  	&quot;pen&quot; = [</div><div class="line">  		&#123; // 1</div><div class="line">          	&quot;name&quot; = &quot;one&quot;;</div><div class="line">  		&#125;,</div><div class="line">  		&#123; // 2</div><div class="line">          	&quot;name&quot; = &quot;two&quot;;</div><div class="line">  		&#125;</div><div class="line">  	]</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>자료형 (value 형태) :  일반형, Object형 (대괄호로 시작, 1~여러개의 object), 배열형(중괄호[] 시작, 대괄호로 순서 구분)</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  	<span class="string">"name"</span> = <span class="number">1</span>; <span class="comment">// 일반형</span></div><div class="line">  	<span class="string">"phone"</span> = &#123; <span class="comment">// object</span></div><div class="line">      	<span class="string">"first"</span> = <span class="number">0101111111</span>;</div><div class="line">      	<span class="string">"two"</span> = <span class="number">01022222222</span>;</div><div class="line">  	&#125;</div><div class="line">  	<span class="string">"pen"</span> = [ <span class="comment">// array</span></div><div class="line">  		&#123; <span class="comment">// 1</span></div><div class="line">          	<span class="string">"name"</span> = <span class="string">"one"</span>;</div><div class="line">  		&#125;,</div><div class="line">  		&#123; <span class="comment">// 2</span></div><div class="line">          	<span class="string">"name"</span> = <span class="string">"two"</span>;</div><div class="line">  		&#125;</div><div class="line">  	]</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>주소경로 의미</p>
-<p><a href="http://api.openweathermap.org/data/2.5/forecast/daily?q=Seoul:kr&amp;mode=json&amp;units=metric&amp;cnt=7&amp;appid=ebd4c9e7404d1c92b00c0f6638268b6a" target="_blank" rel="external">http://api.openweathermap.org/data/2.5/forecast/daily?q=Seoul:kr&amp;mode=json&amp;units=metric&amp;cnt=7&amp;appid=ebd4c9e7404d1c92b00c0f6638268b6a</a> </p>
+<p><a href="http://api.openweathermap.org/data/2.5/forecast/daily?q=Seoul:kr&amp;mode=json&amp;units=metric&amp;cnt=7&amp;appid={API_KEY}" target="_blank" rel="external">http://api.openweathermap.org/data/2.5/forecast/daily?q=Seoul:kr&amp;mode=json&amp;units=metric&amp;cnt=7&amp;appid={API_KEY}</a></p>
 <p>함수와 비슷 </p>
 <p>ex) 함수선언 :  <code>function sum(num1,num2){}</code>  , 함수사용 :  <code>sum(1,2);</code></p>
 <p>위와같은 함수, 호출이있을때 num1과 num2가 파라미터(고정), 호출시 1과 2가 전달자라하면</p>
 <p>주소경로에서 daily는 함수명, q, mode, units, cnt, appid는 파라미터 (고정)</p>
-<p>즉, <code>Seoul:kr , json , metric , 7 , ebd4c9e7404d1c92b00c0f6638268b6a</code> 는 전달자이다 (변경가능) </p>
-<h2 id="화면-누르기"><a href="#화면-누르기" class="headerlink" title="화면 누르기"></a>화면 누르기</h2><p>방법 ? : touch : 전체 / select (listview) - 사라짐? / click         -&gt; itemClickListener로 통일 (현재)</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line">방법 1 : onClickListener를 이용. (기본적으로 사용)</div><div class="line">public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) &#123;</div><div class="line">        View view = inflater.inflate(R.layout.fragment_main, container, false);</div><div class="line">        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() &#123;</div><div class="line">            @Override</div><div class="line">            public void onItemClick(AdapterView&lt;?&gt; parent, View view, int position, long id) &#123;</div><div class="line">                Toast.makeText(getActivity(), &quot;string&quot;, Toast.LENGTH_SHORT).show(); // Toast</div><div class="line">            &#125;</div><div class="line">        &#125;);</div><div class="line">방법 2 : android:onClick를 이용해서 xml내 버튼에 선언 후 MainActivity에서 하기</div><div class="line">public void btnToast(View view) &#123;</div><div class="line">        Button viewbutton = (Button) view; // 클릭된 뷰를 버튼으로 받기 ?</div><div class="line"></div><div class="line">        for (Button buttonarr : getbutton) &#123;</div><div class="line">            if (viewbutton == buttonarr) &#123;</div><div class="line">                Toast.makeText(this, viewbutton.getText(), Toast.LENGTH_SHORT).show(); // Toast</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">&#125;</div><div class="line">방법 3 : setOnClickListener(this) 이용. mainActivity 내 onClick 함수 하나만 씀</div><div class="line">버튼 클릭시 TextView를 찾아 TextView의 Text에 Button의 text값을 넣기</div><div class="line">protected void onCreate(Bundle savedInstanceState) &#123;</div><div class="line">		button[4] = (Button) findViewById(R.id.button4);</div><div class="line">		button[4].setOnClickListener(this);</div><div class="line">&#125;</div><div class="line">public void onClick(View v) &#123;</div><div class="line">        TextView textView = (TextView) findViewById(R.id.textView); // 텍스트뷰 부르기?</div><div class="line">        Button getbutton = (Button) v; // View를 버튼으로 받기</div><div class="line"></div><div class="line">        textView.append(getbutton.getText()); // string 연결해서 붙이기</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>즉, <code>Seoul:kr , json , metric , 7 , API_KEY</code> 는 전달자이다 (변경가능) </p>
+<h2 id="화면-누르기"><a href="#화면-누르기" class="headerlink" title="화면 누르기"></a>화면 누르기</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//방법 1 : onClickListener를 이용. (기본적으로 사용)</span></div><div class="line"><span class="function"><span class="keyword">public</span> View <span class="title">onCreateView</span><span class="params">(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)</span> </span>&#123;</div><div class="line">        View view = inflater.inflate(R.layout.fragment_main, container, <span class="keyword">false</span>);</div><div class="line">        listView.setOnItemClickListener(<span class="keyword">new</span> AdapterView.OnItemClickListener() &#123;</div><div class="line">            <span class="meta">@Override</span></div><div class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onItemClick</span><span class="params">(AdapterView&lt;?&gt; parent, View view, <span class="keyword">int</span> position, <span class="keyword">long</span> id)</span> </span>&#123;</div><div class="line">                Toast.makeText(getActivity(), <span class="string">"string"</span>, Toast.LENGTH_SHORT).show(); <span class="comment">// Toast</span></div><div class="line">            &#125;</div><div class="line">        &#125;);</div><div class="line">        </div><div class="line"><span class="comment">//방법 2 : android:onClick를 이용해서 xml내 버튼에 선언 후 MainActivity에서 하기</span></div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">btnToast</span><span class="params">(View view)</span> </span>&#123;</div><div class="line">        Button viewbutton = (Button) view; <span class="comment">// 클릭된 뷰를 버튼으로 받기 ?</span></div><div class="line"></div><div class="line">        <span class="keyword">for</span> (Button buttonarr : getbutton) &#123;</div><div class="line">            <span class="keyword">if</span> (viewbutton == buttonarr) &#123;</div><div class="line">                Toast.makeText(<span class="keyword">this</span>, viewbutton.getText(), Toast.LENGTH_SHORT).show(); <span class="comment">// Toast</span></div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">//방법 3 : setOnClickListener(this) 이용. mainActivity 내 onClick 함수 하나만 씀</span></div><div class="line"><span class="comment">//버튼 클릭시 TextView를 찾아 TextView의 Text에 Button의 text값을 넣기</span></div><div class="line"><span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(Bundle savedInstanceState)</span> </span>&#123;</div><div class="line">		button[<span class="number">4</span>] = (Button) findViewById(R.id.button4);</div><div class="line">		button[<span class="number">4</span>].setOnClickListener(<span class="keyword">this</span>);</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onClick</span><span class="params">(View v)</span> </span>&#123;</div><div class="line">        TextView textView = (TextView) findViewById(R.id.textView); <span class="comment">// 텍스트뷰 부르기?</span></div><div class="line">        Button getbutton = (Button) v; <span class="comment">// View를 버튼으로 받기</span></div><div class="line"></div><div class="line">        textView.append(getbutton.getText()); <span class="comment">// string 연결해서 붙이기</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <h3 id="Toast"><a href="#Toast" class="headerlink" title="Toast"></a>Toast</h3><p>간단하게 표시하는 msg. ex) true / false같이 잠깐 표시(화면전환 x)  </p>
 <h3 id="Activity"><a href="#Activity" class="headerlink" title="Activity"></a>Activity</h3><p>Activity : 화면 하나 전체</p>
 <p>ActivityFragment : 화면에 표시할(갖다붙이는) 것들의 그룹, 화면 바꾸는 것.</p>
@@ -152,7 +155,7 @@
 <p>Implicit Intent(무기명) : 해야할 일은 정해져있으나 어떤 대상에 제한되지 않음</p>
 <p>ex) 어플에서 전화번호 누르면 전화앱 여러개 선택할수있음, sms, 메일주소 등</p>
 <p>사용방법</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">Intent i = new Intent(getActivity(), DetailActivity.class); // Intent 생성</div><div class="line"></div><div class="line">i.putExtra(Intent.EXTRA_TEXT, forecast); // i에 값을 넣는다. ()괄호안 값들은 json의 key와 value.</div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">Intent i = <span class="keyword">new</span> Intent(getActivity(), DetailActivity.class); <span class="comment">// Intent 생성</span></div><div class="line">d</div><div class="line">i.putExtra(Intent.EXTRA_TEXT, forecast); <span class="comment">// i에 값을 넣는다. ()괄호안 값들은 json의 key와 value.</span></div></pre></td></tr></table></figure>
 <h4 id="Explicit-Intent-유기명"><a href="#Explicit-Intent-유기명" class="headerlink" title="Explicit Intent(유기명)"></a>Explicit Intent(유기명)</h4><p>Intent 선언후</p>
 <ul>
 <li>i.putExtra(key, value) : 값 넣기 </li>
@@ -161,12 +164,17 @@
 <li>i.isEmpty ? : 비어있는지?</li>
 </ul>
 <h4 id="Implicit-Intent-무기명"><a href="#Implicit-Intent-무기명" class="headerlink" title="Implicit Intent(무기명)"></a>Implicit Intent(무기명)</h4><p>Intent 선언후 , Action(행동)만 넣기, 수신자/발신자 없이</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">Intent shareIntent = new Intent(Intent.ACTION_SEND); // 무기명(Implicit) Intent 선언.</div><div class="line">// Action(해야할 일) 종류 : ACTION_SEND , ACTION_VIEW 등 </div><div class="line">shareIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_WHEN_TASK_RESET); // 그냥 추가해야한다고 알면됨</div><div class="line">shareIntent.setType(&quot;text/plain&quot;); // 타입</div><div class="line">shareIntent.putExtra(Intent.EXTRA_TEXT, mForecastString + FORECAST_SHARE_HASHTAG); // key, value</div></pre></td></tr></table></figure>
-<p>share action provider : 무기명 만들기(공유버튼) , 데이터 전송시 공유하는 것 </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) &#123; // 메뉴 만들기</div><div class="line">	       inflater.inflate(R.menu.menu_detail_fragment, menu); // 메뉴(공유버튼) 만들어붙이기</div><div class="line">            MenuItem menuitem = menu.findItem(R.id.action_share); // 선택된 메뉴 item 찾기(findViewByid)</div><div class="line">            ShareActionProvider shareActionProvider = (ShareActionProvider) MenuItemCompat.getActionProvider(menuitem); </div><div class="line">            // 공유 버튼. 선택시 선택된 메뉴를 얻어와서 ShareActionProvider 타입으로</div><div class="line">            if (shareActionProvider != null) &#123; // 공유버튼을 눌렀을때</div><div class="line">                shareActionProvider.setShareIntent(createShareForecastIntent());</div><div class="line">		   //  공유버튼을 누르면 Intent가 해야할 일 설정</div><div class="line">            &#125; else &#123; // menuitem action을 얻어오지 못했을때</div><div class="line">                Log.e(LOG_TAG, &quot;shareActionProvider is null&quot;);</div><div class="line">            &#125;</div></pre></td></tr></table></figure>
-<h3 id="Preference"><a href="#Preference" class="headerlink" title="Preference"></a>Preference</h3><p>모든 설정값은 preference로 저장된다. 값들을 저장하는 container라 생각하면된다.</p>
+<p>ACTION_SEND / ACTION_VIEW : 지도누르면 보여주거나 / 보내는 것 (해야할 일, action)</p>
+<p>ex) 액션뷰로 geo를 보내면 지도앱들이 반응을하는 broadcast(메세지 전송) 이 일어남 </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">Intent shareIntent = <span class="keyword">new</span> Intent(Intent.ACTION_SEND); <span class="comment">// 무기명(Implicit) Intent , 해야할 일</span></div><div class="line">shareIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_WHEN_TASK_RESET); <span class="comment">// 그냥 추가해야한다고 알면됨</span></div><div class="line">shareIntent.setType(<span class="string">"text/plain"</span>); <span class="comment">// 타입</span></div><div class="line">shareIntent.putExtra(Intent.EXTRA_TEXT, mForecastString + FORECAST_SHARE_HASHTAG); <span class="comment">// key, value</span></div></pre></td></tr></table></figure>
+<p>share action provider : 무기명 만들기(공유버튼) , 데이터 전송시 provider형태로 데이터 전송(공유)하는 것 </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onCreateOptionsMenu</span><span class="params">(Menu menu, MenuInflater inflater)</span> </span>&#123; <span class="comment">// 메뉴 만들기</span></div><div class="line">            inflater.inflate(R.menu.menu_detail_fragment, menu); <span class="comment">// 메뉴(공유버튼) 만들어붙이기</span></div><div class="line">            MenuItem menuitem = menu.findItem(R.id.action_share); <span class="comment">// 선택된 메뉴 item 찾기.</span></div><div class="line"></div><div class="line">            ShareActionProvider shareActionProvider = <span class="comment">// 선택된 공유버튼 메뉴 가져오기</span></div><div class="line">                    (ShareActionProvider) MenuItemCompat.getActionProvider(menuitem);</div><div class="line"></div><div class="line">            <span class="keyword">if</span> (shareActionProvider != <span class="keyword">null</span>) &#123; <span class="comment">// 공유버튼 눌렀을때, intent가 해야할 일 설정</span></div><div class="line">                shareActionProvider.setShareIntent(createShareForecastIntent());</div><div class="line">            &#125; <span class="keyword">else</span> &#123; <span class="comment">// menuitem action을 얻어오지 못했을때</span></div><div class="line">                Log.e(LOG_TAG, <span class="string">"shareActionProvider is null"</span>);</div><div class="line">            &#125;</div><div class="line"></div><div class="line">            <span class="keyword">super</span>.onCreateOptionsMenu(menu, inflater);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="Preference"><a href="#Preference" class="headerlink" title="Preference"></a>Preference</h3><p>모든 설정값은 preference로 저장된다. 설정 값들을 저장하는 container라 생각.</p>
 <p>같은 구글 계정을 쓰는 android device와 공유 , device바뀌어도 유지, 단, 어플삭제시 모두 삭제됨.</p>
 <p>기본적으로 안드로이드 어플은 key value형태로 구성되어있음 오류시 어플지웠다다시깔기 </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">onPreferenceChange</span><span class="params">(Preference preference, Object newValue)</span> </span>&#123; <span class="comment">// key value 형태</span></div><div class="line">        String Strvalue = newValue.toString();</div><div class="line">        <span class="keyword">if</span> (preference <span class="keyword">instanceof</span> ListPreference) &#123;</div><div class="line">            <span class="comment">// instanceof : 상속관계에 포함이가능한가, 자기자신으로 형변환이가능한가 / 강제형변환은 안됨</span></div><div class="line">            <span class="comment">// ex) 트리구조처럼 생각하면 a가 bc상속할때 b와 c는 서로 모름</span></div><div class="line">            ListPreference listPreference = (ListPreference) preference; <span class="comment">// 온도 단위 설정값</span></div><div class="line">            <span class="keyword">int</span> prefindex = listPreference.findIndexOfValue(Strvalue);</div><div class="line">            <span class="keyword">if</span> (prefindex &gt;= <span class="number">0</span>) &#123; <span class="comment">// index가 있으면</span></div><div class="line">                preference.setSummary(listPreference.getEntries()[prefindex]); <span class="comment">// entries까지 배열</span></div><div class="line">            &#125;</div><div class="line">        &#125; <span class="keyword">else</span> &#123;</div><div class="line">            preference.setSummary(Strvalue); <span class="comment">// EditTextPreference면 바로 저장</span></div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">true</span>;</div><div class="line">        &#125;</div></pre></td></tr></table></figure>
+<p>SharedPreference : preference access할때</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getActivity());</div></pre></td></tr></table></figure>
 <h3 id="Adapter"><a href="#Adapter" class="headerlink" title="Adapter"></a>Adapter</h3><p>AdapterView : Adapter를 보여주는 것. (표시될 위치와 바뀌는 부분)</p>
 <ul>
 <li>몇개의 데이터가 있는지?, setOnItemClickListener사용할때 () 괄호안에 AdapterView사용</li>
@@ -175,77 +183,105 @@
 <ul>
 <li>4개의 함수 인자 : context : getActivity() , 가져올 layout, 표현할 곳의 id, data </li>
 </ul>
-<h2 id="Menu"><a href="#Menu" class="headerlink" title="Menu"></a>Menu</h2><p>설정 메뉴 (Settings) : 다 넣지말고, 기본적인것만 넣기  (setting guideline 참고)</p>
+<h3 id="Menu"><a href="#Menu" class="headerlink" title="Menu"></a>Menu</h3><p>설정 메뉴 (Settings) : 다 넣지말고, 기본적인것만 넣기  + setting guideline 참고</p>
 <p>메뉴 가중치(무게) 값으로 순서 정하기, menu_main.xml내 menu태그안에 설정 </p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">android:orderInCategory=&quot;100&quot;</div></pre></td></tr></table></figure>
 <p>setHasOptionsMenu : 메뉴 있나 체크 </p>
-<p>Shared (action) provider : (공유버튼), 이용하는것 데이터 전송할때 공유하는것 , provider형태로 데이터 전송하는법</p>
-<p>SharedPreference </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getActivity());</div></pre></td></tr></table></figure>
-<h1 id="broadcast-broadcast-receiver"><a href="#broadcast-broadcast-receiver" class="headerlink" title="broadcast, broadcast receiver"></a>broadcast, broadcast receiver</h1><p>text input : 사용자 키보드입력 받기, 문자/숫자/password 처럼 형식 설정가능 </p>
-<p>radio button : 라디오 그룹안에 넣어야함 선택지끼리의 그룹중 하나만 선택가능 (listpreference로 구현)</p>
-<p>hint text : id/password처럼 입력해야할거로 표시해주고 입력시 사라지기 ex)로 보여주기, ui적 감성</p>
-<p>ux는 사용자가 써본 경험의 차이. (design영역) user experience  -&gt;  ex) 회원가입</p>
-<h2 id="Broadcast-Intents"><a href="#Broadcast-Intents" class="headerlink" title="Broadcast Intents"></a>Broadcast Intents</h2><p>ACTION_SEND / ACTION_VIEW : 지도누르면 보여주거나 / 보내는 것 (해야할 일, action)</p>
-<p>안드로이드는 항상 공유상태(통신), 방송(메세지) 가 일어남 ,ex) 윈도우 시간, update 수시로 체크/표시</p>
-<p>ex) 액션뷰로 geo를 보내면 지도앱들이 반응을하는 broadcast(메세지 전송) 이 일어남 </p>
-<p>intent filter에서 broadcast receiver로 어떤액션을 원하는지 선택함. </p>
-<p>어떤 상황이되면 메세지를보내주는방식  ,전체채널을 쏴주고, 원하는거 골라서봄  ex) 케이블 tv 원하는 채널  선택</p>
+<h1 id="broadcast-broadcast-receiver"><a href="#broadcast-broadcast-receiver" class="headerlink" title="broadcast, broadcast receiver"></a>broadcast, broadcast receiver</h1><p>안드로이드는 항상 공유상태(통신), 방송(메세지) 가 일어남 ,ex) 윈도우 시간, update 수시로 체크/표시</p>
+<p>intent filter에서 broadcast receiver로 어떤 방송을 원하는지 선택함. </p>
+<p>방송 메세지가 발생하면 , filter로 등록된 앱들에게 전송해주는것</p>
+<p>ex) 전체채널을 쏴주고, 원하는거 골라서봄  ,케이블 tv 원하는 채널  선택</p>
 <h2 id="Intent-filter-등록-방법"><a href="#Intent-filter-등록-방법" class="headerlink" title="Intent filter 등록 방법"></a>Intent filter 등록 방법</h2><ul>
 <li><p>xml - static</p>
-<p>티비가 항상 켜져있는 (receiver가 항상) ,  끌수없음, 한채널만같이 사용</p>
-<p>ex) 어플이 항상 켜져있어야 , ex) 가계부앱 , 카톡, 배터리 % 알림     // 언제어디서든 필요</p>
+<p>ex) 티비가 항상 켜져있는 (receiver가 항상) ,  끌수없고 등록한 채널만 사용</p>
+<p>어플이 항상 메시지 받을 준비가 되어있는 것  ex) 가계부앱 , 카톡, 배터리 % 알림     // 언제어디서든 필요</p>
 </li>
 <li><p>code(java) - dynamic</p>
-<p>앱이 실행중에만, 티비가 켜져있을때에만 (원할때만) // 실행될때만 필요 </p>
-<p>ex) mp3 사용시 </p>
+<p>앱이 실행중에만 메세지를 들을수 있음.</p>
+<p>ex) 티비가 켜져있을때에만 (원할때만)  </p>
+<p>ex) 음악 어플 사용시 이어폰 플러그 감지해서 음악 플레이 정지</p>
 </li>
 </ul>
-<h1 id="content-provider"><a href="#content-provider" class="headerlink" title="content provider"></a>content provider</h1><p>각각 앱의 고유한 저장공간을 연결해서 데이터 주고받는 즉, 데이터 접근에대한 관리를 담당한다.</p>
+<h1 id="content-provider"><a href="#content-provider" class="headerlink" title="content provider"></a>content provider</h1><p>각각 앱의 고유한 저장공간을 연결해서 데이터 주고 받는 즉, 데이터 접근에대한 관리를 담당한다. (데이터 제공자)</p>
+<p>접근을위해 db의 전체 contract를 알려줄 필요가 없이 요청하는 정보(필요한 정보)만 공유해주면된다. </p>
+<p>또한 실제로 SQLite를 안쓰고 content provider로 돌아가는 것 처럼 보인다 (보안목적으로 좋음, 실제로는 SQLite로 돌아감)</p>
+<p>ex) 어플 위젯(widget)</p>
+<p>데이터를 다른앱에서도 효율적으로 이용(공유)하려면 permission 필요. </p>
+<p>-&gt; shared content provider사용       ex) 전화부, 문자 등의 데이터 공유</p>
+<p>content provider외에도 content observer / content reserver가 있다.</p>
+<p>content reserver :  provider를 도와주는 역할     ex) dbhelper .. </p>
+<p>content observer : 관찰하는 역할     ex) addAll() 함수 원형의 notification </p>
+<p>데이터입력은 contentvalues를 이용해서 하면 된다.</p>
+<p>resolver를 사용해서 observer에게 보여준다. (하위말고 상위에게)</p>
+<h2 id="접근-과정"><a href="#접근-과정" class="headerlink" title="접근 과정"></a>접근 과정</h2><p>Encoding : Uri 만들기  /  Decoding : Uri로 필요한 정보 parsing 해서 빼오기</p>
+<p>1, 2. 외부에서 내 앱에 접근하기 위한 api 설정,  content Uri(구분자, 경로) 결정하기. (‘’/‘’ 로 구분.)</p>
+<p>Uri = schema+ authority + table + code (query data)</p>
+<p>schema : uri 프로토콜 식별 (content:)             ex) geo , http                    </p>
+<p>authority : 컨텐츠 찾기위한 고유 글자 , 보통 application 패키지 이름     ex) com.study.sunshine.app</p>
+<p>table : 보통 테이블 이름         ex) weather</p>
+<p>Query : 실제 원하는 쿼리 데이터          ex) seoul, kr</p>
+<ol>
+<li>urimatcher : </li>
+</ol>
+<p>숫자 #, 문자 *</p>
+<p>ex) PATH/*/or/#</p>
+<p>6개 함수 : create / query / getType / insert / update / delete 가 한 묶음.  </p>
 <h2 id="Activity-Lifecycle"><a href="#Activity-Lifecycle" class="headerlink" title="Activity Lifecycle"></a>Activity Lifecycle</h2><p>back버튼, parent버튼 누르는것에 따라 main, detail 간 화면전환에서 다른 동작을 한다.</p>
 <p>모든 리소스는 제한적</p>
 <ul>
 <li><p>framework 신호 : created , visible , paused(앱을 잠시 정지, 재시작시 onResume) ,  stopped , restarting , destroyed</p>
 </li>
 <li><p>method : onCreate, onStart, onResume, onPause, onStop, onRestart, onDestroy</p>
-<p>ex) 비디오 보는거랑 비슷 (생성, 시작, 보여짐, 재생, 중지, 재시작, 부수기)</p>
+<p>ex) 비디오 보는거랑 비슷 (생성, 시작, 재생, 일시정지, 중지, (재시작), 부수기)</p>
 </li>
 </ul>
 <p>foreground (활성화) / background : (뒤에서 돌아감) </p>
-<h3 id="focus"><a href="#focus" class="headerlink" title="focus"></a>focus</h3><p>윈도우에서 커서 깜빡이는상태를 focus 상태라함, 안드로이드에서는 보여지는 한 화면에 focus되어있다함</p>
-<p>안드로이드 회전 전, 후 화면은 다른 화면이다. 그러므로  지우고 재생성해야함.</p>
+<h3 id="focus"><a href="#focus" class="headerlink" title="focus"></a>focus</h3><p>윈도우에서 커서 깜빡이는상태를 focus 상태라함, 안드로이드에서는 한 화면을 보는 것을 focus된 상태라 함</p>
+<p>안드로이드 회전 전, 후 화면은 전혀 다른 화면이다. 재생성해야함.</p>
 <ul>
-<li>과정 : pause -&gt; stop -&gt; destroy -&gt; create -&gt; start -&gt; resume</li>
+<li>과정 : onPause -&gt; onStop -&gt;onDestroy -&gt; onCreate -&gt; onStart -&gt; onResume</li>
 </ul>
 <p>paused 상태에서 onStop method를 사용할 수 있음 (홈버튼 누른 뒤)</p>
 <ul>
-<li>목표 : lifecycle에 영향을 받지 않도록만들어야함.  </li>
+<li>목표 : lifecycle에 영향을 받지 않고 어플리케이션 동작이 원활하게 만들어야함.  </li>
 </ul>
-<p>paused상태에  종료할 준비(onstop 호출할)를 해야함 (이상적) , 실제로는 stopped 상태에서 하는게 좋음</p>
-<p>종료 준비 상태에서는 sensor listener, location updates.. 등 안써도 되는 기능은 꺼두기.</p>
+<p>// paused상태에  종료할 준비(onstop 호출할)를 해야함 (이상적) , 실제로는 stopped 상태에서 하는게 좋음</p>
+<p>종료 준비 상태에서는 sensor listener, location updates.. 등 무거운 기능, focus상태가 아닐 때 필요없는 기능은 꺼두기.</p>
 <h2 id="데이터-저장-방법"><a href="#데이터-저장-방법" class="headerlink" title="데이터 저장 방법"></a>데이터 저장 방법</h2><ol>
 <li>sharedpreference : 간단한 설정값저장 -&gt; key,value형태이므로 간단한 값들만 저장, 유연성떨어짐,</li>
-<li>SQLite db : db서버가 요청시에만 켜짐, 간단한 db , _id 필수값</li>
+<li>SQLite db : 어플리케이션이 켜질 때 db도 켜짐, 간단한 db이며 _id 필수값이다.</li>
 </ol>
-<p>sql문 해석 : limit 1 (1개만 가져옴) , order by max desc (최고기온으로 내림차순 정렬)</p>
-<h3 id="contract"><a href="#contract" class="headerlink" title="contract"></a>contract</h3><p>db사용시 db에 접근을 통일하는 것, data contract하려면 db helper 필요.</p>
-<p>data : db저장처럼 저장가능한거 (재사용가능) , 변수의 값들은 데이터 x </p>
-<p>contract : DDL을 만드는 것 -&gt; schema를 만드는 것 (schema는 table, column으로 이루어짐)</p>
-<p>ex) WeatherContract (schema생성) </p>
-<p>SQLiteOpenHelper (db helper) : create table, db 버전 upgrade 역할.</p>
-<p>db를 이용한 어플의 Test 방법, db 설</p>
-<p>contract, dbhelper 생성</p>
-<p>testpractice 함수 : setup (test들어감), teardown (test나옴)</p>
+<h2 id="contract"><a href="#contract" class="headerlink" title="contract"></a>contract</h2><p>schema를 만드는 것 (schema는 table, column의 이름을 정하는 것)</p>
+<p>Data(db 등..)의 접근을 항상 동일한 값으로 통일, 어디서나 갖다 쓸수있음. </p>
+<ul>
+<li>ex) string, app gradle , WeatherContract 클래스 (schema) </li>
+</ul>
+<p>Data : db처럼 데이터 저장이 가능한것 (재사용) , 변수의 값은 데이터 X</p>
+<p>SQLiteOpenHelper (db helper) : db를 이용한 어플의 test방법 중 하나</p>
+<ul>
+<li>ex) WeatherDbHelper 클래스 : create table, db version upgrade.</li>
+</ul>
+<h3 id="Database-제약-조건-constraint"><a href="#Database-제약-조건-constraint" class="headerlink" title="Database 제약 조건 (constraint)"></a>Database 제약 조건 (constraint)</h3><p>REAL : 실수 / INTEGER : 정수</p>
+<p>TEXT : 문자열</p>
+<p>PRIMARY KEY : primary key</p>
+<p>UNIQUE : 중복값 허용 x</p>
+<h2 id="ContentValues"><a href="#ContentValues" class="headerlink" title="ContentValues"></a>ContentValues</h2><p>dp helper를 이용해 db에 값을 넣는 것을 도와주는 자료 형태</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">static final String TEST_LOCATION = &quot;Seoul&quot;;</div><div class="line"></div><div class="line">ContentValues testValues = new ContentValues();</div><div class="line">testValues.put(WeatherContract.LocationEntry.COLUMN_LOCATION_SETTING, TEST_LOCATION); // key value 형태</div><div class="line">testValues.put(WeatherContract.LocationEntry.COLUMN_CITY_NAME, &quot;North Pole&quot;);</div><div class="line">testValues.put(WeatherContract.LocationEntry.COLUMN_COORD_LAT, 64.7488);</div><div class="line">testValues.put(WeatherContract.LocationEntry.COLUMN_COORD_LONG, -147.353);</div></pre></td></tr></table></figure>
+<h2 id="Cursor"><a href="#Cursor" class="headerlink" title="Cursor"></a>Cursor</h2><p>// db에서 crud : create , read, update, delete</p>
+<p>커서는 결과의 덩어리를 하나씩 가르킨다.</p>
+<p>커서이동의 경우 move() 로 다음줄로 이동한다.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">WeatherDbHelper dbHelper = <span class="keyword">new</span> WeatherDbHelper(getContext());</div><div class="line">SQLiteDatabase db = dbHelper.getWritableDatabase();</div><div class="line"><span class="comment">// rawquery는 안쓰는게 좋음, query중 7개 인자 들어가는것 쓰기.</span></div><div class="line">Cursor cursor = db.query(WeatherContract.LocationEntry.TABLE_NAME, <span class="comment">// table name</span></div><div class="line">				<span class="keyword">null</span>, <span class="comment">// "Columns" , select * 과 같은 sql문에서 선택하는 * 와 같음, 전체 or nothing</span></div><div class="line">				<span class="keyword">null</span>, <span class="comment">// "Where" 조건 컬럼</span></div><div class="line">				<span class="keyword">null</span>, <span class="comment">// 조건 값</span></div><div class="line">				<span class="keyword">null</span>, <span class="comment">// "Group by"</span></div><div class="line">				<span class="keyword">null</span>, <span class="comment">// "Row Groups"</span></div><div class="line">				<span class="keyword">null</span>); <span class="comment">// "Sort order"</span></div><div class="line"></div><div class="line">cursor.close(); <span class="comment">// 마지막 실행한 순서대로 close </span></div><div class="line">db.close();</div></pre></td></tr></table></figure>
+<p>또다른 Cursor 예제</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">Cursor cursor = mContext.getContentResolver().query(</div><div class="line">                WeatherContract.LocationEntry.CONTENT_URI, // Uri</div><div class="line">                new String[]&#123;WeatherContract.LocationEntry._ID&#125;, // id (projection)</div><div class="line">                WeatherContract.LocationEntry.COLUMN_LOCATION_SETTING + &quot;= ?&quot;, </div><div class="line">                // select 할 부분(declare row), where 조건</div><div class="line">                new String[]&#123;locationSetting&#125;, // ?에 들어갈 내용 </div><div class="line">                null</div><div class="line">);</div></pre></td></tr></table></figure>
 <h1 id="service"><a href="#service" class="headerlink" title="service"></a>service</h1><p>서비스 : 백그라운드에서 돌아가는 간단한 백그라운드 작업 ?</p>
-<p>+</p>
-<p>json 몽고디비, 코드읽고 해석해보기 </p>
-<p>db보고, contract가 무엇인지, sqliteopenhelper는 무엇인지?</p>
-<p>db project로 contract + dbhelper 써서 schema 만들기? </p>
+<p>+json 몽고디비, 코드읽고 해석해보기? </p>
+<p>유다시티 - developing android apps</p>
+<p>853으로 activity lifecycle &amp; data까지 복습</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://jeongsangphil.github.io/2017/01/12/Android-Studio/" data-id="ciy9upvqu000030m0n7m4txch" class="article-share-link">Share</a>
+      <a data-url="http://jeongsangphil.github.io/2017/01/12/Android-Studio/" data-id="ciy9upvqu000030m0n7m4txch" class="article-share-link">Partager</a>
       
       
     </footer>
@@ -287,7 +323,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://jeongsangphil.github.io/2017/01/04/how-to-use-blog/" data-id="ciy9upvr0000130m0w8o89986" class="article-share-link">Share</a>
+      <a data-url="http://jeongsangphil.github.io/2017/01/04/how-to-use-blog/" data-id="ciy9upvr0000130m0w8o89986" class="article-share-link">Partager</a>
       
       
     </footer>
@@ -338,7 +374,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://jeongsangphil.github.io/2017/01/04/javascript/" data-id="ciy9upvra000330m015fdsoxc" class="article-share-link">Share</a>
+      <a data-url="http://jeongsangphil.github.io/2017/01/04/javascript/" data-id="ciy9upvra000330m015fdsoxc" class="article-share-link">Partager</a>
       
       
     </footer>
@@ -418,7 +454,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://jeongsangphil.github.io/2017/01/03/html_css/" data-id="ciy9upvr5000230m02luitb0j" class="article-share-link">Share</a>
+      <a data-url="http://jeongsangphil.github.io/2017/01/03/html_css/" data-id="ciy9upvr5000230m02luitb0j" class="article-share-link">Partager</a>
       
       
     </footer>
@@ -453,7 +489,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
+    <h3 class="widget-title">Articles récents</h3>
     <div class="widget">
       <ul>
         
@@ -486,7 +522,7 @@
   <div class="outer">
     <div id="footer-info" class="inner">
       &copy; 2017 jeongsangphil<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+      Propulsé by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
 </footer>
