@@ -25,7 +25,7 @@ service :
 
 기본 infoTextview이용 : html처럼 태그 내에 적거나 태그 밖에 적기  
 api문서볼때">
-<meta property="og:updated_time" content="2017-02-02T07:46:52.842Z">
+<meta property="og:updated_time" content="2017-02-07T05:57:05.617Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android Studio">
 <meta name="twitter:description" content="안드로이드 중요 4대 개념
@@ -77,9 +77,9 @@ api문서볼때">
       </nav>
       <nav id="sub-nav">
         
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="Flux RSS"></a>
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Rechercher"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
       </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://jeongsangphil.github.io"></form>
@@ -236,12 +236,15 @@ api문서볼때">
 <h2 id="접근-과정"><a href="#접근-과정" class="headerlink" title="접근 과정"></a>접근 과정</h2><p>Encoding : Uri 만들기  /  Decoding : Uri로 필요한 정보 parsing 해서 빼오기</p>
 <p>1, 2. 외부에서 내 앱에 접근하기 위한 api 설정,  content Uri(구분자, 경로) 결정하기. (‘’/‘’ 로 구분.)</p>
 <p>Uri = schema+ authority + table + code (query data)</p>
-<p>schema : uri 프로토콜 식별 (content:)             ex) geo , http                    </p>
+<p>schema : uri 프로토콜 식별 (content:)    , 해석하는 방법ㅅ         ex) geo , http                    </p>
 <p>authority : 컨텐츠 찾기위한 고유 글자 , 보통 application 패키지 이름     ex) com.study.sunshine.app</p>
 <p>table : 보통 테이블 이름         ex) weather</p>
 <p>Query : 실제 원하는 쿼리 데이터          ex) seoul, kr</p>
 <ol>
-<li>urimatcher : </li>
+<li><p>contract update</p>
+</li>
+<li><p>urimatcher : path와 data를 맞추는 것  </p>
+</li>
 </ol>
 <p>숫자 #, 문자 *</p>
 <p>ex) PATH/*/or/#</p>
@@ -293,6 +296,21 @@ api문서볼때">
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">WeatherDbHelper dbHelper = <span class="keyword">new</span> WeatherDbHelper(getContext());</div><div class="line">SQLiteDatabase db = dbHelper.getWritableDatabase();</div><div class="line"><span class="comment">// rawquery는 안쓰는게 좋음, query중 7개 인자 들어가는것 쓰기.</span></div><div class="line">Cursor cursor = db.query(WeatherContract.LocationEntry.TABLE_NAME, <span class="comment">// table name</span></div><div class="line">				<span class="keyword">null</span>, <span class="comment">// "Columns" , select * 과 같은 sql문에서 선택하는 * 와 같음, 전체 or nothing</span></div><div class="line">				<span class="keyword">null</span>, <span class="comment">// "Where" 조건 컬럼</span></div><div class="line">				<span class="keyword">null</span>, <span class="comment">// 조건 값</span></div><div class="line">				<span class="keyword">null</span>, <span class="comment">// "Group by"</span></div><div class="line">				<span class="keyword">null</span>, <span class="comment">// "Row Groups"</span></div><div class="line">				<span class="keyword">null</span>); <span class="comment">// "Sort order"</span></div><div class="line"></div><div class="line">cursor.close(); <span class="comment">// 마지막 실행한 순서대로 close </span></div><div class="line">db.close();</div></pre></td></tr></table></figure>
 <p>또다른 Cursor 예제</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">Cursor cursor = mContext.getContentResolver().query(</div><div class="line">                WeatherContract.LocationEntry.CONTENT_URI, // Uri</div><div class="line">                new String[]&#123;WeatherContract.LocationEntry._ID&#125;, // id (projection)</div><div class="line">                WeatherContract.LocationEntry.COLUMN_LOCATION_SETTING + &quot;= ?&quot;, </div><div class="line">                // select 할 부분(declare row), where 조건</div><div class="line">                new String[]&#123;locationSetting&#125;, // ?에 들어갈 내용 </div><div class="line">                null</div><div class="line">);</div></pre></td></tr></table></figure>
+<h1 id="Loaders"><a href="#Loaders" class="headerlink" title="Loaders"></a>Loaders</h1><p>비동기 방식, 정해진 데이터 타입 가져올 때 사용.         </p>
+<p>ex) 날씨 앱에서 기본 위치 설정되어있는 것 처럼 </p>
+<p> 어플리케이션 background thread에서 처리,  (mainactivity의 background랑 다름)</p>
+<p>loader(상위) - asynctask loader - cursorloader(하위)</p>
+<p>기본적으로는 main thread에 위치, 사용자의 요청없이 로더가 필요에 의해 background thread생성 (모니터링) </p>
+<p>Loader 전용 async task 사용.(Asynctask Loader)</p>
+<p>cursor loader 는 Android UI와 1대1로 data 바인딩 가능.     ex) getlong, settext 등 </p>
+<p>cursor는 reference 형태. 화면전환시 destroy -&gt; create 불필요. 형태는 그대로있는상태에서 값만바뀌도록 가능 </p>
+<p>커서로더 ; 커서관리, 백그라운드 스레드 생성, ui와 동기화, 데이터소스 모니터링 기능.</p>
+<p>content provider를 쓰지않더라도 loader를 쓸 수 있다. 쓰면 사용하기 좋을 뿐, database 가져와서 씀.</p>
+<p>화면 보여준상태에서 데이터만 갱신,  loader manager로 따로 id등록. ex) process id처럼 </p>
+<p>[asynctaskloader] : oncreate - init loader - oncreateloader - loadinbackground - (restart) - init loader - onloadfinish </p>
+<p>[cursorloader] : 주로 이것만 사용.</p>
+<p>oncreate - init loader - oncreateloader - loadinbackground - onloadfinish (restart) - init loader - onloadfinish </p>
+<p>cursor adapter부름 </p>
 <h1 id="service"><a href="#service" class="headerlink" title="service"></a>service</h1><p>서비스 : 백그라운드에서 돌아가는 간단한 백그라운드 작업 ?</p>
 <p>+json 몽고디비, 코드읽고 해석해보기? </p>
 <p>유다시티 - developing android apps</p>
@@ -301,7 +319,7 @@ api문서볼때">
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://jeongsangphil.github.io/2017/01/12/Android-Studio/" data-id="ciy9upvqu000030m0n7m4txch" class="article-share-link">Partager</a>
+      <a data-url="http://jeongsangphil.github.io/2017/01/12/Android-Studio/" data-id="ciy9upvqu000030m0n7m4txch" class="article-share-link">Share</a>
       
       
     </footer>
@@ -312,7 +330,7 @@ api문서볼때">
   
   
     <a href="/2017/01/04/how-to-use-blog/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Ancien</strong>
+      <strong class="article-nav-caption">Older</strong>
       <div class="article-nav-title">블로그 사용 방법</div>
     </a>
   
@@ -345,7 +363,7 @@ api문서볼때">
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Articles récents</h3>
+    <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
         
@@ -378,7 +396,7 @@ api문서볼때">
   <div class="outer">
     <div id="footer-info" class="inner">
       &copy; 2017 jeongsangphil<br>
-      Propulsé by <a href="http://hexo.io/" target="_blank">Hexo</a>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
 </footer>
